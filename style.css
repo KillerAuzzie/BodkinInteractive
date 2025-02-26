@@ -145,6 +145,29 @@
     max-width: 900px;
     margin: 0 auto;
   }
+  .content-container ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    text-align: center; /* Center the text */
+  }
+  
+  .content-container ul li {
+    display: inline-block; /* Make list items appear inline */
+    margin: 0 15px; /* Adjust spacing between items */
+    font-size: 18px;
+    color: #ddd; /* Adjust color if needed */
+    position: relative;
+  }
+  
+  .content-container ul li::before {
+    content: "•"; /* Custom bullet point */
+    color: #ff6600; /* Customize bullet color */
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 8px; /* Space between bullet and text */
+  }
+  
   
   /* --------------------
      SUPPORTERS GALLERY
