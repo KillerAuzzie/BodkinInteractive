@@ -4,12 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bodkin Interactive</title>
-
-  <!-- Favicon (icon in the browser tab) -->
-  <!-- Adjust path/type if you're using a different image format -->
   <link rel="icon" type="image/png" href="Assets/img/logo.png" />
-
-  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,7 +12,6 @@
   <!-- HEADER / NAV with LOGO & BRAND NAME -->
   <header>
     <div class="header-container">
-      <!-- Logo & brand name; link back to home when clicked -->
       <a href="#home" class="logo-container">
         <img src="Assets/img/logo.png" alt="Bodkin Interactive Logo" class="site-logo" />
         <span class="brand-name">Bodkin Interactive</span>
@@ -27,44 +21,76 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- Replace with your actual Discord invite link -->
-          <li><a href="https://discord.gg/sqXW4r2nw9" target="_blank">Discord</a></li>
+          <li><a href="#supporters">Supporters</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HOME SECTION -->
-  <section id="home">
-    <div class="content-container">
-      <h1>Welcome to Bodkin Interactive</h1>
-      <p>Follow the progress at our Discord below</p>
-      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" class="button-discord">
-        Join Our Discord
-      </a>
-    </div>
-  </section>
+  <!-- MAIN so the footer is pinned at bottom when content is short -->
+  <main>
+    <!-- HOME SECTION (with background image) -->
+    <section id="home">
+      <div class="content-container">
+        <h1>Welcome to Bodkin Interactive</h1>
+        <p>Follow the progress at our Discord below</p>
+        <a href="https://discord.gg/sqXW4r2nw9" target="_blank" class="button-discord">
+          Join Our Discord
+        </a>
+      </div>
+    </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <div class="content-container">
-      <h2>About</h2>
-      <p>
-        We are creating a game currently titled <strong>Fields Of Renown</strong>.<br>
-        It’s planned to be a Medieval Survival RPG.
-      </p>
-    </div>
-  </section>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="content-container">
+        <h2>About</h2>
+        <p>
+          We are creating a game currently titled <strong>Fields Of Renown</strong>.<br>
+          It’s planned to be a Medieval Survival RPG.
+        </p>
+      </div>
+    </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <div class="content-container">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:BodkinInteractive@gmail.com">BodkinInteractive@gmail.com</a>
-      </p>
-    </div>
-  </section>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="content-container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:BodkinInteractive@gmail.com">BodkinInteractive@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- SUPPORTERS SECTION (with example images) -->
+    <section id="supporters">
+        <div class="content-container">
+          <h2>Supporters</h2>
+      
+          <div class="supporter-gallery">
+            <!-- 1st supporter -->
+            <div class="supporter-card">
+              <img src="Assets/img/Uld_Logo_minified.png" alt="Supporter 1 Logo" />
+              <p>ULD</p>
+              <p class="supporter-description">
+                United Lads Division - the longest running competitive squad team combining the strength of Oceanic and South East Asian players. We aim to create the number one place for competitive squad within OCE/SEA and present the best team possible to compete in regional and international tournaments. 
+              </p>
+              <a href="https://discord.gg/ULD" target="_blank" class="button-discord">Join ULD Discord</a>
+            </div>
+      
+            <!-- 2nd supporter -->
+            <div class="supporter-card">
+              <img src="Assets/img/clifford.png" alt="Supporter 2 Logo" />
+              <p>CLIFFORD</p>
+              <p class="supporter-description">
+                Our longtime mascot with lots of charm.
+              </p>
+              <!-- <a href="https://discord.gg/CLIFFORD" target="_blank" class="button-discord">
+                Clifford Discord -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  </main>
 
   <!-- FOOTER with Social Media -->
   <footer>
@@ -77,7 +103,6 @@
     <p>&copy; 2025 Bodkin Interactive. All rights reserved.</p>
   </footer>
 
-  <!-- Link your external JS file at the end of the body -->
   <script src="script.js"></script>
 </body>
 </html>
