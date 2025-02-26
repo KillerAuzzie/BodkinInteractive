@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            background: #333;
-            overflow: hidden;
-            color: white;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            padding: 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-        }
-        header {
-            background: #555;
-            color: white;
-            padding: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bodkin Interactive</title>
+
+  <!-- Favicon (icon in the browser tab) -->
+  <!-- Adjust path/type if you're using a different image format -->
+  <link rel="icon" type="image/png" href="Assets/img/logo.png" />
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <h1>Welcome to Bodkin BodkinInteractive</h1>
-        <p>Under Development</p>
-    </section>
-    
-    <section id="about">
-        <h2>About</h2>
-        <p>This is.</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: BodkinInteractive@gmail.com</p>
-    </section>
+
+  <!-- HEADER / NAV with LOGO & BRAND NAME -->
+  <header>
+    <div class="header-container">
+      <!-- Logo & brand name; link back to home when clicked -->
+      <a href="#home" class="logo-container">
+        <img src="Assets/img/logo.png" alt="Bodkin Interactive Logo" class="site-logo" />
+        <span class="brand-name">Bodkin Interactive</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- Replace with your actual Discord invite link -->
+          <li><a href="https://discord.gg/sqXW4r2nw9" target="_blank">Discord</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home">
+    <div class="content-container">
+      <h1>Welcome to Bodkin Interactive</h1>
+      <p>Follow the progress at our Discord below</p>
+      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" class="button-discord">
+        Join Our Discord
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="content-container">
+      <h2>About</h2>
+      <p>
+        We are creating a game currently titled <strong>Fields Of Renown</strong>.<br>
+        It’s planned to be a Medieval Survival RPG.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="content-container">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:BodkinInteractive@gmail.com">BodkinInteractive@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER with Social Media -->
+  <footer>
+    <div class="social-links">
+      <a href="https://discord.gg/sqXW4r2nw9" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank">YouTube</a>
+      <a href="https://twitch.tv/killerauzziee" target="_blank">Twitch</a>
+      <a href="https://killerauzzie.itch.io" target="_blank">itch.io</a>
+    </div>
+    <p>&copy; 2025 Bodkin Interactive. All rights reserved.</p>
+  </footer>
+
+  <!-- Link your external JS file at the end of the body -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+/* --------------------
+   BASIC RESET & BODY
+--------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #121212; 
+    color: #fff;              
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;  
+  }
+  
+  /* --------------------
+     HEADER & NAV
+  --------------------- */
+  header {
+    background-color: #222;   
+    padding: 0.5rem 0; /* Some vertical padding for the logo + nav */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Logo container: 
+     - includes the logo image + brand name 
+     - aligned with nav in same row
+  */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .site-logo {
+    height: 50px;  /* Adjust as desired */
+    width: auto;
+  }
+  
+  .brand-name {
+    margin-left: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    /* Use whatever color you like: #fff is typical on dark backgrounds */
+    color: #fff;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 0;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --------------------
+     SECTIONS
+  --------------------- */
+  section {
+    padding: 60px 20px; 
+    text-align: center;
+  }
+  
+  .content-container {
+    max-width: 900px;
+    margin: 0 auto; 
+  }
+  
+  /* --------------------
+     DISCORD BUTTON
+  --------------------- */
+  .button-discord {
+    background-color: #5865F2; 
+    color: #fff;
+    padding: 12px 20px;
+    display: inline-block;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .button-discord:hover {
+    background-color: #4752c4;
+  }
+  
+  /* --------------------
+     FOOTER
+  --------------------- */
+  footer {
+    background: #222;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
