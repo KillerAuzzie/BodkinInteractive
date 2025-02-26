@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Bodkin Interactive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('Assets/img/contact-bg.jpg') no-repeat center center fixed; background-size: cover;">
+    <div class="overlay"></div>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-container">
+        <img src="Assets/img/logo.png" alt="Bodkin Interactive Logo" class="site-logo" />
+        <span class="brand-name">Bodkin Interactive</span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="contact">
+        <div class="content-container">
+          <h2>Contact Us</h2>
+          <p>Fill out the form below to send us an email!</p>
+      
+          <form action="send_email.php" method="POST" style="max-width: 500px; margin: 20px auto;">
+            <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+            <input type="text" id="name" name="name" required style="display: block; width: 100%; margin-bottom: 15px;">
+          
+            <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+            <input type="email" id="email" name="email" required style="display: block; width: 100%; margin-bottom: 15px;">
+          
+            <label for="message" style="display: block; margin-bottom: 5px;">Message:</label>
+            <textarea id="message" name="message" required style="display: block; width: 100%; height: 120px; margin-bottom: 15px;"></textarea>
+          
+            <button type="submit" style="display: block; width: 100%; padding: 12px; background-color: #ff6600; color: white; border: none; cursor: pointer;">Send Message</button>
+          </form>
+          
+        </div>
+      </section>
+      
+      
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://discord.gg/sqXW4r2nw9" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank">YouTube</a>
+      <a href="https://twitch.tv/killerauzziee" target="_blank">Twitch</a>
+      <a href="https://killerauzzie.itch.io" target="_blank">itch.io</a>
+    </div>
+    <p>&copy; 2025 Bodkin Interactive. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
