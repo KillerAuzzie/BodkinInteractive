@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error fetching Discord messages:", error));
 
     // Fetch latest YouTube video
-    const channelID = "UC4J0XeYhV1wAwb2zoYcFGHw"; // Replace with your actual channel ID
+    const channelID = "UCKBOMEqtVu2Z87FnDAhy43A"; // Replace with your actual channel ID
     const feedURL = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
 
     fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feedURL}`)
