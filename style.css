@@ -27,14 +27,20 @@
   /* --------------------
      HEADER & NAV
   --------------------- */
-  header {
-    background-color: #222;
-    padding: 0.5rem 0;
-    position: sticky; /* Makes the header 'stick' on scroll */
-    top: 0;           /* Sticks to the top of the page */
-    z-index: 1000;    /* Ensure it's above other elements */
-  }
-  
+/* in style.css, replace your existing header rules: */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #222;
+  padding: 0.5rem 0;
+  /* remove position: sticky; */
+}
+
+
+
   .header-container {
     display: flex;
     align-items: center;
@@ -87,13 +93,19 @@
   nav ul li a:hover {
     text-decoration: underline;
   }
-  
-  /* MAIN expands to fill leftover space, so footer is pinned at the bottom */
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+  /* Active nav-link styling */
+nav ul li a.active {
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+}
+
+/* push your content down by the header’s height (~66px): */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 66px; /* adjust if your header height changes */
+}
   
   /* --------------------
      SECTIONS
