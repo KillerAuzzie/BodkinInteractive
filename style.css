@@ -55,10 +55,11 @@ header {
     align-items: center;
     text-decoration: none;
     color: #fff;
+    
   }
   
   .site-logo {
-    height: 50px;
+    height: 75px;
     width: auto;
   }
   
