@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Bodkin Interactive</title>
+  <title>Contact Us - Bodkin Interactive | Get in Touch</title>
+  <meta name="description" content="Contact Bodkin Interactive for questions, feedback, or collaboration opportunities. Email us or join our Discord community!" />
+  <meta name="keywords" content="contact Bodkin Interactive, game studio contact, indie game development, collaboration" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Bodkin Interactive" />
+  <meta property="og:description" content="Get in touch with our indie game studio for questions, feedback, or collaboration opportunities." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body style="background: url('Assets/img/contact-bg.jpg') no-repeat center center fixed; background-size: cover;">
@@ -36,22 +47,28 @@
           <p>Got a question or feedback? Use the form below and we’ll get back to you as soon as possible!</p><br>
           <p>Alternatively, email us at <a href="mailto:bodkininteractive@gmail.com">bodkininteractive@gmail.com</a> or message us on Discord.</p>
 
-          <!-- Updated Form with Formspree Integration -->
-          <form action="https://formspree.io/f/mpwpawyq" method="POST" style="max-width: 500px; margin: 20px auto;">
-            <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
-            <input type="text" id="name" name="name" required style="display: block; width: 100%; margin-bottom: 15px;">
+          <!-- Contact Form -->
+          <form action="https://formspree.io/f/mpwpawyq" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" id="name" name="name" required class="form-input" placeholder="Your full name">
+            </div>
           
-            <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
-            <input type="email" id="email" name="email" required style="display: block; width: 100%; margin-bottom: 15px;">
+            <div class="form-group">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com">
+            </div>
           
-            <label for="message" style="display: block; margin-bottom: 5px;">Message:</label>
-            <textarea id="message" name="message" required style="display: block; width: 100%; height: 120px; margin-bottom: 15px;"></textarea>
+            <div class="form-group">
+              <label for="message" class="form-label">Message:</label>
+              <textarea id="message" name="message" required class="form-textarea" placeholder="Tell us about your question, feedback, or collaboration idea..."></textarea>
+            </div>
           
-            <button type="submit" style="display: block; width: 100%; padding: 12px; background-color: #ff6600; color: white; border: none; cursor: pointer;">Send Message</button>
+            <button type="submit" class="form-submit">Send Message</button>
           </form>
 
           <!-- Confirmation Message (Hidden, will show after submission) -->
-          <p id="form-success" style="display: none; color: green; text-align: center; margin-top: 15px;">✔️ Message sent successfully!</p>
+          <p id="form-success" class="form-success">✔️ Message sent successfully!</p>
 
         </div>
     </section>
