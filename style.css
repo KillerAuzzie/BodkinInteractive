@@ -6,7 +6,25 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+  :root {
+  /* desktop header height (tweak if needed) */
+  --header-h: 25px;
+}
+
+/* make browsers stop scrolling early for #hash links */
+html {
+  scroll-padding-top: var(--header-h);
+}
+section[id], [id].anchor-target {
+  /* extra safety for any element you jump to */
+  scroll-margin-top: var(--header-h);
+}
+
+/* mobile header is shorter */
+@media (max-width: 768px) {
+  :root { --header-h: 60px; }
+}
+
   /* Use flex on body to push footer down (sticky footer effect) */
   html, body {
     height: 100%;
