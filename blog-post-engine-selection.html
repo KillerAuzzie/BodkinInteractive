@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Engine Selection: Godot vs Unreal - Bodkin Interactive Blog</title>
+  <meta name="title" content="Engine Selection: Godot vs Unreal - Bodkin Interactive Blog" />
+  <meta name="description" content="We're carefully evaluating both Godot and Unreal Engine for Fields of Renown. This critical decision will shape the technical capabilities and visual fidelity of our medieval world." />
+  <meta name="keywords" content="game engine selection, Godot vs Unreal, Fields of Renown development, game development blog, Bodkin Interactive" />
+  <meta name="author" content="Bodkin Interactive" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://bodkininteractive.github.io/blog-post-engine-selection.html" />
+  <meta property="og:title" content="Engine Selection: Godot vs Unreal - Bodkin Interactive" />
+  <meta property="og:description" content="We're carefully evaluating both Godot and Unreal Engine for Fields of Renown. This critical decision will shape the technical capabilities and visual fidelity of our medieval world." />
+  <meta property="og:image" content="https://bodkininteractive.github.io/Assets/img/newlogo.png" />
+  <meta property="article:published_time" content="2025-01-15T00:00:00Z" />
+  <meta property="article:author" content="Bodkin Interactive" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://bodkininteractive.github.io/blog-post-engine-selection.html" />
+  <meta property="twitter:title" content="Engine Selection: Godot vs Unreal - Bodkin Interactive" />
+  <meta property="twitter:description" content="We're carefully evaluating both Godot and Unreal Engine for Fields of Renown. This critical decision will shape the technical capabilities and visual fidelity of our medieval world." />
+  <meta property="twitter:image" content="https://bodkininteractive.github.io/Assets/img/newlogo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="Assets/img/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="Assets/img/logo.png" />
+  <link rel="apple-touch-icon" href="Assets/img/logo.png" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Blog post specific styles -->
+  <style>
+    .blog-post-hero {
+      background: linear-gradient(135deg, rgba(255, 102, 0, 0.1), rgba(255, 133, 51, 0.1));
+      padding: 80px 20px 60px;
+      text-align: center;
+      border-bottom: 2px solid #ff6600;
+      margin-top: 66px;
+    }
+
+    .blog-post-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .blog-post-date {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .blog-post-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .blog-post-tag {
+      background: #ff6600;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .blog-post-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      line-height: 1.8;
+    }
+
+    .blog-post-content h2 {
+      color: #ff6600;
+      margin: 40px 0 20px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+    }
+
+    .blog-post-content h3 {
+      color: #fff;
+      margin: 30px 0 15px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+    }
+
+    .blog-post-content h4 {
+      color: #ff8533;
+      margin: 25px 0 10px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .blog-post-content p {
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+
+    .blog-post-content ul, .blog-post-content ol {
+      margin: 20px 0;
+      padding-left: 30px;
+      color: #e0e0e0;
+    }
+
+    .blog-post-content li {
+      margin-bottom: 8px;
+    }
+
+    .blog-post-content strong {
+      color: #ff6600;
+      font-weight: 600;
+    }
+
+    .blog-post-content blockquote {
+      border-left: 4px solid #ff6600;
+      padding-left: 20px;
+      margin: 30px 0;
+      font-style: italic;
+      color: #ccc;
+      background: rgba(255, 102, 0, 0.05);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .blog-post-navigation {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+      padding: 40px 20px;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .blog-nav-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #ff6600, #ff8533);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .blog-nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
+      color: white;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .comparison-table th {
+      background: #ff6600;
+      color: white;
+      font-weight: 600;
+    }
+
+    .comparison-table td {
+      color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post-hero {
+        padding: 60px 15px 40px;
+      }
+
+      .blog-post-content {
+        padding: 40px 15px;
+      }
+
+      .blog-post-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .comparison-table {
+        font-size: 0.9rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER / NAV -->
+  <header role="banner">
+    <div class="header-container">
+      <a href="index.html" class="logo-container" aria-label="Return to Bodkin Interactive Home">
+        <img src="Assets/img/newlogo.png" alt="Bodkin Interactive Logo" class="site-logo" loading="eager" />
+        <span class="brand-name">Bodkin Interactive</span>
+      </a>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="nav-menu" role="navigation" aria-label="Main navigation">
+        <ul role="menubar">
+          <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+          <li role="none"><a href="index.html#blog-preview" role="menuitem">Blog</a></li>
+          <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+    <!-- Blog Post Hero -->
+    <section class="blog-post-hero" aria-labelledby="blog-post-title">
+      <div class="blog-post-meta">
+        <span class="blog-post-date">January 15, 2025</span>
+        <div class="blog-post-tags">
+          <span class="blog-post-tag">Development</span>
+          <span class="blog-post-tag">Technical</span>
+          <span class="blog-post-tag">Engine</span>
+        </div>
+      </div>
+      <h1 id="blog-post-title">Engine Selection: Godot vs Unreal</h1>
+      <p>Making the critical decision that will shape Fields of Renown's technical foundation</p>
+    </section>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-content">
+      <p>
+        As we continue developing Fields of Renown, one of the most critical decisions we face is choosing the right game engine. 
+        This choice will fundamentally shape not only the technical capabilities of our medieval sandbox RPG but also the visual 
+        fidelity, performance, and development workflow.
+      </p>
+
+      <p>
+        After months of research, prototyping, and community discussions, we've narrowed our choice down to two powerful contenders: 
+        <strong>Godot Engine</strong> and <strong>Unreal Engine</strong>. Each brings unique strengths to the table, and today we want 
+        to share our analysis with you.
+      </p>
+
+      <h2>The Contenders</h2>
+      
+      <h3>Godot Engine</h3>
+      <p>
+        Godot has emerged as a powerful open-source alternative that's gaining significant traction in the indie game development 
+        community. Its recent 4.0 release brought substantial improvements to both 2D and 3D capabilities, making it a serious 
+        contender for our medieval RPG.
+      </p>
+
+      <h4>Godot Advantages:</h4>
+      <ul>
+        <li><strong>Open Source Freedom:</strong> Complete freedom to modify and extend the engine as needed</li>
+        <li><strong>Zero Cost:</strong> No licensing fees or revenue sharing requirements</li>
+        <li><strong>Lightweight Architecture:</strong> Smaller file sizes and faster compilation times</li>
+        <li><strong>Active Community:</strong> Passionate community with regular updates and improvements</li>
+        <li><strong>Cross-Platform Excellence:</strong> Outstanding support for multiple platforms out of the box</li>
+        <li><strong>Node-Based Scene System:</strong> Intuitive and flexible scene organization</li>
+        <li><strong>GDScript:</strong> Python-like scripting language that's easy to learn and use</li>
+      </ul>
+
+      <h4>Godot Considerations:</h4>
+      <ul>
+        <li><strong>Ecosystem Maturity:</strong> Smaller asset marketplace compared to established engines</li>
+        <li><strong>3D Performance:</strong> Still catching up to industry leaders for complex 3D scenes</li>
+        <li><strong>Learning Resources:</strong> Fewer tutorials and documentation compared to Unreal</li>
+        <li><strong>Industry Adoption:</strong> Less proven in large-scale commercial projects</li>
+      </ul>
+
+      <h3>Unreal Engine</h3>
+      <p>
+        Unreal Engine has long been the industry standard for high-fidelity 3D games, powering everything from indie titles to 
+        AAA blockbusters. Its robust feature set and proven track record make it an attractive option for Fields of Renown's 
+        ambitious medieval world.
+      </p>
+
+      <h4>Unreal Advantages:</h4>
+      <ul>
+        <li><strong>Industry Standard:</strong> Battle-tested technology used in countless successful games</li>
+        <li><strong>Visual Excellence:</strong> Cutting-edge graphics capabilities and rendering features</li>
+        <li><strong>Comprehensive Toolset:</strong> Complete development environment with professional tools</li>
+        <li><strong>Massive Ecosystem:</strong> Huge marketplace with professional assets and plugins</li>
+        <li><strong>Blueprint System:</strong> Visual scripting that accelerates development</li>
+        <li><strong>Documentation:</strong> Extensive official documentation and learning resources</li>
+        <li><strong>Performance Optimization:</strong> Highly optimized for various platforms and hardware</li>
+      </ul>
+
+      <h4>Unreal Considerations:</h4>
+      <ul>
+        <li><strong>Learning Curve:</strong> More complex to master, especially for new developers</li>
+        <li><strong>Resource Requirements:</strong> Higher system requirements for development</li>
+        <li><strong>Revenue Sharing:</strong> 5% royalty after $1 million in gross revenue</li>
+        <li><strong>Project Size:</strong> Larger build sizes and longer compilation times</li>
+        <li><strong>Overkill Factor:</strong> Might be more complex than needed for our scope</li>
+      </ul>
+
+      <h2>Our Evaluation Criteria</h2>
+      
+      <p>
+        To make an informed decision, we're evaluating both engines across several key criteria that are crucial for Fields of Renown's success:
+      </p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Godot</th>
+            <th>Unreal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Development Speed</strong></td>
+            <td>Fast iteration, simple workflow</td>
+            <td>Powerful tools, steeper learning curve</td>
+          </tr>
+          <tr>
+            <td><strong>Visual Quality</strong></td>
+            <td>Good, improving rapidly</td>
+            <td>Industry-leading graphics</td>
+          </tr>
+          <tr>
+            <td><strong>Performance</strong></td>
+            <td>Efficient for our scope</td>
+            <td>Highly optimized, scalable</td>
+          </tr>
+          <tr>
+            <td><strong>Cost</strong></td>
+            <td>Completely free</td>
+            <td>Free until $1M revenue</td>
+          </tr>
+          <tr>
+            <td><strong>Community</strong></td>
+            <td>Growing, passionate indie focus</td>
+            <td>Large, professional-oriented</td>
+          </tr>
+          <tr>
+            <td><strong>Platform Support</strong></td>
+            <td>Excellent cross-platform</td>
+            <td>Comprehensive platform support</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Fields of Renown Specific Requirements</h3>
+      <p>
+        Our medieval sandbox RPG has some specific technical requirements that influence our engine choice:
+      </p>
+
+      <ul>
+        <li><strong>Open World Environment:</strong> Seamless Welsh countryside with varied terrain</li>
+        <li><strong>Dynamic Weather:</strong> Realistic weather systems affecting gameplay</li>
+        <li><strong>Medieval Architecture:</strong> Detailed castles, villages, and period-accurate buildings</li>
+        <li><strong>Character Systems:</strong> Complex player and NPC interaction systems</li>
+        <li><strong>Economic Simulation:</strong> Real-time economy and trading mechanics</li>
+        <li><strong>Multiplayer Capability:</strong> Future-proofing for community features</li>
+      </ul>
+
+      <h2>Community Input</h2>
+      
+      <p>
+        We've been actively seeking input from our Discord community, and the feedback has been incredibly valuable. 
+        Many of you have shared experiences with both engines, highlighting real-world considerations we might have missed.
+      </p>
+
+      <blockquote>
+        "Its a diffuclt choice to make between the two choice but unreal 5 standouts due to its wide spread use and integration with blueprints and C++"
+        <br><br>
+        <em>— Filthy Crab</em>
+      </blockquote>
+
+      <p>
+        Several community members with modding experience have pointed out the importance of mod support, which is 
+        easier to implement with Godot's open-source nature. Others have emphasized the visual polish that Unreal 
+        can provide out of the box.
+      </p>
+
+      <h2>Testing Phase</h2>
+      
+      <p>
+        We created test scenarios in both engines to evaluate their 
+        real-world performance for our specific use cases. Our test builds include:
+      </p>
+
+      <h3>Technical Prototypes</h3>
+      <ol>
+        <li><strong>Terrain Generation:</strong> Creating varied Welsh landscapes with hills, valleys, and water bodies</li>
+        <li><strong>Weather Implementation:</strong> Dynamic weather systems with gameplay impact</li>
+        <li><strong>Architecture Showcase:</strong> Medieval buildings with authentic period details</li>
+        <li><strong>Character Controllers:</strong> Movement, combat, and interaction systems</li>
+        <li><strong>Economy Systems:</strong> Basic trading and resource management mechanics</li>
+        <li><strong>Performance Testing:</strong> Frame rates and optimization across different hardware</li>
+      </ol>
+
+      <h2>Decision</h2>
+      <p>
+        We went through the testing phase and decided that <strong>Unreal Engine 5</strong> is the best fit for Fields of Renown. 
+        Due to the powerful 3D engine unreal 5, we can create a more immersive and realistic world.
+      </p>
+
+      <h2>Whats Next?</h2>
+      
+      <p>
+        We are glad to finalize this decision and move forward with the development of Fields of Renown. This decision will mark a major milestone 
+        in Fields of Renown's development, allowing us to:
+      </p>
+
+      <ul>
+        <li>Begin development of the core systems</li>
+        <li>Water making</li>
+        <li>Fishing logic in C++</li>
+        <li>General Start building the foundation of our medieval world including a testing map</li>
+        <li>Begin early alpha testing with community members</li>
+      </ul>
+
+      <h2>Stay Connected</h2>
+      <p>
+        We'll be posting regular updates on our progress, including development insights, technical challenges, and sneak peeks of our work. 
+        If you're interested in following along, make sure to join our Discord community and stay tuned for more!
+      </p>
+
+      <p>
+        <strong>The future of Fields of Renown is in your hands, and we can't wait to build this medieval world together!</strong>
+      </p>
+
+    </article>
+
+    <!-- Blog Post Navigation -->
+    <div class="blog-post-navigation" style="display: flex; gap: 1rem; justify-content: center; margin: 2.5rem 0;">
+      <a href="index.html#blog-preview" class="blog-nav-button">← Browse Other Blogs</a>
+      <a href="contact.html" class="blog-nav-button">Contact Us</a>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="social-links">
+      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener" aria-label="Join our Discord community">Discord</a>
+      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener" aria-label="Watch our YouTube channel">YouTube</a>
+      <a href="https://twitch.tv/killerauzziee" target="_blank" rel="noopener" aria-label="Follow us on Twitch">Twitch</a>
+      <a href="https://killerauzzie.itch.io" target="_blank" rel="noopener" aria-label="Check out our games on itch.io">itch.io</a>
+    </div>
+    <p>&copy; 2025 Bodkin Interactive. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
