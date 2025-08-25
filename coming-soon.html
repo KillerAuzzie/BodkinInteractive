@@ -186,44 +186,7 @@
       font-size: 1.1rem;
     }
 
-    .signup-form {
-      display: flex;
-      max-width: 400px;
-      margin: 0 auto;
-      gap: 15px;
-    }
 
-    .signup-input {
-      flex: 1;
-      padding: 15px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .signup-input::placeholder {
-      color: #ccc;
-    }
-
-    .signup-button {
-      padding: 15px 25px;
-      background: linear-gradient(135deg, #ff6600, #ff8533);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .signup-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
-    }
 
     .progress-section {
       text-align: center;
@@ -323,7 +286,6 @@
 
 <body>
   <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- HEADER / NAV -->
   <header role="banner">
@@ -369,7 +331,7 @@
             A comprehensive look at our fishing mechanics, including different techniques, seasonal patterns, 
             and how fishing integrates with the broader economy of 13th-century Wales.
           </p>
-          <div class="post-eta">ETA: Late January 2025</div>
+          <div class="post-eta">ETA: Late September 2025</div>
         </article>
 
         <!-- Combat System Post -->
@@ -381,7 +343,7 @@
             How we're designing tactical medieval combat that rewards skill and strategy while remaining 
             accessible to players of all experience levels.
           </p>
-          <div class="post-eta">ETA: Early February 2025</div>
+          <div class="post-eta">ETA: Late December 2025</div>
         </article>
 
         <!-- World Design Post -->
@@ -393,7 +355,7 @@
             The historical research and creative process behind recreating authentic medieval Welsh 
             landscapes, architecture, and culture in Fields of Renown.
           </p>
-          <div class="post-eta">ETA: Mid February 2025</div>
+          <div class="post-eta">ETA: Mid February 2026</div>
         </article>
 
         <!-- Economy Post -->
@@ -405,7 +367,7 @@
             How our dynamic trading, farming, and crafting systems work together to create a living, 
             breathing medieval economy that responds to player actions.
           </p>
-          <div class="post-eta">ETA: Late February 2025</div>
+          <div class="post-eta">ETA: April 2025</div>
         </article>
 
         <!-- Weather Post -->
@@ -417,19 +379,19 @@
             Exploring how dynamic weather and seasonal changes affect gameplay, from farming cycles 
             to travel conditions and combat strategies.
           </p>
-          <div class="post-eta">ETA: Early March 2025</div>
+          <div class="post-eta">ETA: June 2025</div>
         </article>
 
         <!-- Community Post -->
         <article class="upcoming-post">
           <div class="post-icon" aria-hidden="true">👥</div>
           <span class="post-status planning">Planning</span>
-          <h3>Building Our Community</h3>
+          <h3>Building Our Community / Early Alpha Testing</h3>
           <p class="post-description">
             Behind the scenes of community building, feedback integration, and how player input is 
             shaping the development of Fields of Renown.
           </p>
-          <div class="post-eta">ETA: Mid March 2025</div>
+          <div class="post-eta">ETA: August 2026</div>
         </article>
       </div>
 
@@ -440,19 +402,19 @@
         
         <div class="progress-stats">
           <div class="progress-stat">
-            <span class="stat-number">3</span>
+            <span class="stat-number">1</span>
             <span class="stat-label">Blog Posts Published</span>
           </div>
           <div class="progress-stat">
-            <span class="stat-number">6</span>
+            <span class="stat-number">2</span>
             <span class="stat-label">Posts In Pipeline</span>
           </div>
           <div class="progress-stat">
-            <span class="stat-number">15+</span>
+            <span class="stat-number">6</span>
             <span class="stat-label">Topics Planned</span>
           </div>
           <div class="progress-stat">
-            <span class="stat-number">750+</span>
+            <span class="stat-number">25</span>
             <span class="stat-label">Discord Members</span>
           </div>
         </div>
@@ -463,12 +425,16 @@
         <h3>Stay in the Loop</h3>
         <p>Be the first to know when new blog posts are published. Get notified about development updates, behind-the-scenes content, and exclusive insights!</p>
         
-        <form class="signup-form" action="#" method="POST">
-          <input type="email" class="signup-input" placeholder="your@email.com" required aria-label="Email address for blog notifications">
-          <button type="submit" class="signup-button">Notify Me</button>
-        </form>
+        <div class="newsletter-signup-section">
+          <a href="https://docs.google.com/forms/d/1C7aQf4uavahYcRvJRNSWbb8-88zUIT7RyZXnfPsVeqs" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-back">
+            Sign Up for Newsletter
+          </a>
+          <p class="newsletter-note">No spam, just game development updates!</p>
+        </div>
       </div>
-
       <!-- Back Button -->
       <div class="back-button">
         <a href="index.html#blog-preview" class="btn-back">← Back to Blog</a>

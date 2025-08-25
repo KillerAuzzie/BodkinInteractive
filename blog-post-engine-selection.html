@@ -52,6 +52,31 @@
       border-bottom: 2px solid #ff6600;
       margin-top: 66px;
     }
+    .notification-signup {
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      border: 2px solid #ff6600;
+      margin: 60px 0;
+    }
+
+    .notification-signup h3 {
+      color: #ff6600;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .notification-signup p {
+      color: #e0e0e0;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .notification-signup {
+        padding: 30px 20px;
+      }
+
 
     .blog-post-meta {
       display: flex;
@@ -224,9 +249,7 @@
 </head>
 
 <body>
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
+  
   <!-- HEADER / NAV -->
   <header role="banner">
     <div class="header-container">
@@ -459,9 +482,25 @@
       </p>
 
     </article>
-
+    <!-- Newsletter Signup Section -->
+    <div class="notification-signup">
+        <h3>Stay in the Loop</h3>
+        <p>Be the first to know when new blog posts are published. Get notified about development updates, behind-the-scenes content, and exclusive insights!</p>
+        
+        <div class="newsletter-signup-section">
+          <a href="https://docs.google.com/forms/d/1C7aQf4uavahYcRvJRNSWbb8-88zUIT7RyZXnfPsVeqs" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="blog-nav-button">
+            Sign Up for Newsletter
+          </a>
+          <p class="newsletter-note">No spam, just game development updates!</p>
+        </div>
+      </div>
+      </section>
     <!-- Blog Post Navigation -->
     <div class="blog-post-navigation" style="display: flex; gap: 1rem; justify-content: center; margin: 2.5rem 0;">
+        
       <a href="index.html#blog-preview" class="blog-nav-button">← Browse Other Blogs</a>
       <a href="contact.html" class="blog-nav-button">Contact Us</a>
     </div>
