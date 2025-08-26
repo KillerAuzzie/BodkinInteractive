@@ -58,6 +58,8 @@
   /* Layout */
   --header-height: 66px;
   --header-height-mobile: 60px;
+  --scroll-offset: 0px; /* Increased for better section visibility */
+  --scroll-offset-mobile: 80px; /* Increased for mobile */
   --container-max-width: 1200px;
   --border-radius: 8px;
   --border-radius-lg: 12px;
@@ -88,6 +90,7 @@
 @media (max-width: 768px) {
   :root {
     --header-height: var(--header-height-mobile);
+    --scroll-offset: var(--scroll-offset-mobile);
     --font-size-5xl: 2.2rem;
     --font-size-4xl: 2rem;
     --spacing-xl: 2rem;
@@ -108,7 +111,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
+  scroll-padding-top: var(--scroll-offset);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -129,7 +132,7 @@ body {
 /* Scroll margin for anchor links */
 section[id],
 [id].anchor-target {
-  scroll-margin-top: var(--header-height);
+  scroll-margin-top: var(--scroll-offset);
 }
 
 /* Skip link for accessibility */
@@ -212,6 +215,8 @@ a:hover {
 section {
   padding: var(--spacing-2xl) var(--spacing-lg);
   text-align: center;
+  /* Add extra top padding for better section visibility after scroll */
+  padding-top: calc(var(--spacing-2xl) + var(--spacing-md));
 }
 
 .content-container {

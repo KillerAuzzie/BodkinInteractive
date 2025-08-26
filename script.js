@@ -166,11 +166,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll("#nav-menu ul li a");
 
     function highlightNav() {
-        const headerHeight = header.offsetHeight;
+        // Use the CSS custom property for scroll offset (90px on desktop, 80px on mobile)
+        const scrollOffset = getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset').trim();
+        const offsetValue = parseInt(scrollOffset) || 90; // fallback to 90px if CSS var fails
         let currentSectionId = "";
 
         sections.forEach(section => {
-            if (window.pageYOffset >= section.offsetTop - headerHeight) {
+            if (window.pageYOffset >= section.offsetTop - offsetValue) {
                 currentSectionId = section.id;
             }
         });
