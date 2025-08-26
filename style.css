@@ -58,8 +58,8 @@
   /* Layout */
   --header-height: 66px;
   --header-height-mobile: 60px;
-  --scroll-offset: 0px; /* Increased for better section visibility */
-  --scroll-offset-mobile: 80px; /* Increased for mobile */
+  --scroll-offset: 50px; /* Increased for better section visibility and leeway */
+  --scroll-offset-mobile: 100px; /* Increased for mobile with leeway */
   --container-max-width: 1200px;
   --border-radius: 8px;
   --border-radius-lg: 12px;
@@ -129,11 +129,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scroll margin for anchor links */
-section[id],
-[id].anchor-target {
-  scroll-margin-top: var(--scroll-offset);
-}
+/* Scroll margin for anchor links - removed duplicate since it's now in section rule */
 
 /* Skip link for accessibility */
 .skip-link {
@@ -216,7 +212,9 @@ section {
   padding: var(--spacing-2xl) var(--spacing-lg);
   text-align: center;
   /* Add extra top padding for better section visibility after scroll */
-  padding-top: calc(var(--spacing-2xl) + var(--spacing-md));
+  padding-top: calc(var(--spacing-2xl) + var(--spacing-lg));
+  /* Add scroll margin for better navigation targeting */
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .content-container {

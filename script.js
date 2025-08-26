@@ -166,23 +166,58 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll("#nav-menu ul li a");
 
     function highlightNav() {
-        // Use the CSS custom property for scroll offset (90px on desktop, 80px on mobile)
-        const scrollOffset = getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset').trim();
-        const offsetValue = parseInt(scrollOffset) || 90; // fallback to 90px if CSS var fails
+        const scrollPosition = window.pageYOffset;
+        const currentHash = window.location.hash.slice(1); // Remove the #
         let currentSectionId = "";
 
-        sections.forEach(section => {
-            if (window.pageYOffset >= section.offsetTop - offsetValue) {
-                currentSectionId = section.id;
+        // First, check if we have a hash in the URL and use that
+        if (currentHash && sections.length > 0) {
+            const hashSection = document.getElementById(currentHash);
+            if (hashSection && hashSection.tagName === 'SECTION') {
+                currentSectionId = currentHash;
+            }
+        }
+
+        // If no hash or hash doesn't match a section, detect by scroll position
+        if (!currentSectionId) {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                // Check if scroll position is within this section (with generous leeway)
+                if (scrollPosition >= sectionTop - 150 && scrollPosition < sectionBottom - 50) {
+                    currentSectionId = section.id;
+                }
+            });
+
+            // If still no section found, find the last section that's above current scroll position
+            if (!currentSectionId) {
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    const section = sections[i];
+                    if (scrollPosition >= section.offsetTop - 150) {
+                        currentSectionId = section.id;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Update navigation links
+        navLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            const isActive = href === `#${currentSectionId}`;
+            
+            link.classList.toggle("active", isActive);
+            
+            if (isActive) {
+                link.setAttribute("aria-current", "page");
+            } else {
+                link.removeAttribute("aria-current");
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.toggle(
-                "active",
-                link.getAttribute("href") === `#${currentSectionId}`
-            );
-        });
+        // Debug logging
+        console.log(`Scroll: ${scrollPosition}, Hash: ${currentHash}, Active: ${currentSectionId}`);
     }
 
     window.addEventListener("scroll", highlightNav);
@@ -190,6 +225,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial highlight on load
     highlightNav();
+
+    // Handle URL hash changes (when clicking navigation links)
+    window.addEventListener('hashchange', () => {
+        setTimeout(highlightNav, 100); // Small delay to ensure scroll completes
+    });
 
     // ————————————————
     // Back to top button functionality
