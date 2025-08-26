@@ -100,7 +100,7 @@
       <div class="content-container">
         <h1 id="hero-title">Welcome to Bodkin Interactive</h1>
         <p>Join our community & actively watch the game take its shape!</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <div class="hero-buttons">
           <a href="https://discord.gg/sqXW4r2nw9" target="_blank" class="button-discord" rel="noopener" aria-label="Join our Discord community server">
             Join Our Discord
           </a>
@@ -286,61 +286,32 @@
       </div>
     </section>
     
-    <section id="supporters" aria-labelledby="supporters-title" style="background: linear-gradient(135deg, rgba(255,102,0,0.04), rgba(255,133,51,0.07)); padding: 60px 0;">
-      <div class="content-container" style="max-width: 900px; margin: 0 auto;">
-        <h2 id="supporters-title" style="text-align: center; color: #ff6600; font-family: 'Cinzel', serif; margin-bottom: 2.5rem;">Supporters</h2>
-        <div class="supporter-gallery" role="list" style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center;">
-          <div class="supporter-card" role="listitem" style="background: #181818; border-radius: 18px; box-shadow: 0 4px 24px rgba(255,102,0,0.10); padding: 2rem 1.5rem 2.5rem 1.5rem; display: flex; flex-direction: column; align-items: center; width: 320px; min-width: 260px; max-width: 100%; transition: transform 0.2s;">
-            <img src="Assets/img/Uld_Logo_minified.png" alt="ULD - United Lads Division Logo" loading="lazy" style="width: 90px; height: 90px; object-fit: contain; margin-bottom: 1.2rem; border-radius: 12px; background: #222;" />
-            <p style="font-size: 1.2rem; font-weight: 700; color: #ff6600; margin-bottom: 0.5rem;"><strong>ULD</strong></p>
-            <p class="supporter-description" style="color: #e0e0e0; text-align: center; margin-bottom: 1.5rem;">
+    <section id="supporters" aria-labelledby="supporters-title">
+      <div class="content-container">
+        <h2 id="supporters-title">Supporters</h2>
+        <div class="supporter-gallery" role="list">
+          <div class="supporter-card-enhanced" role="listitem">
+            <img src="Assets/img/Uld_Logo_minified.png" alt="ULD - United Lads Division Logo" loading="lazy" class="supporter-logo" />
+            <p class="supporter-name"><strong>ULD</strong></p>
+            <p class="supporter-description">
               <strong>United Lads Division</strong> – the longest running competitive squad team combining the strength of Oceanic and South East Asian players.
             </p>
-            <a href="https://discord.gg/ULD" target="_blank" class="button-discord"
-               rel="noopener"
-               aria-label="Join ULD Discord server"
-               style="display: inline-block; width: 100%; max-width: 220px; padding: 0.85em 0; background: #5865F2; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; font-size: 1.05rem; letter-spacing: 0.01em; box-shadow: 0 2px 10px rgba(88,101,242,0.13); transition: background 0.2s, transform 0.2s;">
+            <a href="https://discord.gg/ULD" target="_blank" class="btn-supporter" rel="noopener" aria-label="Join ULD Discord server">
               Join ULD Discord
             </a>
           </div>
-          <div class="supporter-card" role="listitem" style="background: #181818; border-radius: 18px; box-shadow: 0 4px 24px rgba(255,102,0,0.10); padding: 2rem 1.5rem 2.5rem 1.5rem; display: flex; flex-direction: column; align-items: center; width: 320px; min-width: 260px; max-width: 100%; transition: transform 0.2s;">
-            <img src="Assets/img/clifford.png" alt="Clifford the Big Red Dog - Game Development Supporter" loading="lazy" style="width: 90px; height: 90px; object-fit: contain; margin-bottom: 1.2rem; border-radius: 12px; background: #222;" />
-            <p style="font-size: 1.2rem; font-weight: 700; color: #ff6600; margin-bottom: 0.5rem;"><strong>CLIFFORD</strong></p>
-            <p class="supporter-description" style="color: #e0e0e0; text-align: center; margin-bottom: 1.5rem;">
+          <div class="supporter-card-enhanced" role="listitem">
+            <img src="Assets/img/clifford.png" alt="Clifford the Big Red Dog - Game Development Supporter" loading="lazy" class="supporter-logo" />
+            <p class="supporter-name"><strong>CLIFFORD</strong></p>
+            <p class="supporter-description">
               <strong>Clifford</strong>, the big red dog, a longtime supporter of our game development and a good friend of ours! An absolute legend of all time!
             </p>
-            <a href="https://discord.gg/bigredrs2" target="_blank" class="button-discord"
-               rel="noopener"
-               aria-label="Join Clifford's Discord server"
-               style="display: inline-block; width: 100%; max-width: 220px; padding: 0.85em 0; background: #5865F2; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; font-size: 1.05rem; letter-spacing: 0.01em; box-shadow: 0 2px 10px rgba(88,101,242,0.13); transition: background 0.2s, transform 0.2s;">
+            <a href="https://discord.gg/bigredrs2" target="_blank" class="btn-supporter" rel="noopener" aria-label="Join Clifford's Discord server">
               Join Clifford's Discord!
             </a>
           </div>
         </div>
       </div>
-      <style>
-        @media (max-width: 700px) {
-          #supporters .supporter-gallery {
-            flex-direction: column;
-            gap: 2rem;
-          }
-          #supporters .supporter-card {
-            width: 100% !important;
-            min-width: 0 !important;
-            max-width: 100% !important;
-          }
-        }
-        #supporters .button-discord:hover, #supporters .button-discord:focus {
-          background: #4752C4;
-          color: #fff;
-          transform: translateY(-2px) scale(1.03);
-          text-decoration: none;
-        }
-        #supporters .supporter-card:hover, #supporters .supporter-card:focus-within {
-          transform: translateY(-4px) scale(1.015);
-          box-shadow: 0 8px 32px rgba(255,102,0,0.16);
-        }
-      </style>
     </section>
   </main>
 

@@ -1,10 +1,15 @@
 /* ========================================
-   BODKIN INTERACTIVE - OPTIMIZED STYLES
-   Version: 2.0 | Last Updated: 2025
+   BODKIN INTERACTIVE - CLEAN & OPTIMIZED STYLES
+   Version: 2.1 | Last Updated: 2025
+   - Consolidated button styles
+   - Removed inline styles
+   - Improved responsive design
+   - Better CSS custom properties usage
 ======================================== */
 
 /* --------------------
-   CSS CUSTOM PROPERTIES
+   🎨 CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   - Colors, typography, spacing, shadows, transitions
 --------------------- */
 :root {
   /* Colors */
@@ -90,7 +95,8 @@
 }
 
 /* --------------------
-   RESET & BASE STYLES
+   🔄 RESET & BASE STYLES
+   - CSS reset, global typography, accessibility
 --------------------- */
 *,
 *::before,
@@ -133,7 +139,7 @@ section[id],
   left: 6px;
   background: var(--primary-color);
   color: var(--text-primary);
-  padding: 8px;
+  padding: var(--spacing-xs);
   text-decoration: none;
   border-radius: var(--border-radius);
   z-index: var(--z-tooltip);
@@ -350,6 +356,13 @@ main {
   align-items: center;
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 #home::before {
   content: "";
   position: absolute;
@@ -367,62 +380,95 @@ main {
 }
 
 /* --------------------
-   BUTTONS
+   🔘 BUTTONS - CONSOLIDATED & REUSABLE
+   - Base button styles, variants, sizes, layouts
+   - Legacy compatibility classes included
 --------------------- */
-.button-discord {
-  background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
-  color: var(--text-primary);
+
+/* Base Button Styles */
+.btn {
+  display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
-  display: block;
-  margin: var(--spacing-lg) auto;
   border-radius: var(--border-radius);
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: none;
   transition: all var(--transition-normal);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  width: fit-content;
   min-width: 200px;
+  font-family: var(--font-primary);
 }
 
-.button-discord:hover {
+/* Button Variants */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+}
+
+.btn-secondary:hover {
   background: linear-gradient(135deg, #4752c4, var(--secondary-color));
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
 }
 
-/* Centered Button Styles */
-.centered-button {
+/* Button Sizes */
+.btn-sm { padding: calc(var(--spacing-sm) * 0.75) var(--spacing-md); }
+.btn-lg { padding: var(--spacing-md) var(--spacing-xl); }
+
+/* Button Layout */
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-center {
   display: block;
   margin: 0 auto;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
+}
+
+/* Legacy button classes for backward compatibility */
+.button-discord, .centered-button {
+  display: block;
+  margin: var(--spacing-lg) auto;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
   font-weight: 600;
+  text-decoration: none;
   text-align: center;
-  width: fit-content;
-  min-width: 200px;
-  transition: all 0.3s ease;
-  border: none;
   cursor: pointer;
+  border: none;
+  transition: all var(--transition-normal);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+  min-width: 200px;
+  font-family: var(--font-primary);
+  background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
 }
 
-.centered-button:hover {
+.button-discord:hover, .centered-button:hover {
+  background: linear-gradient(135deg, #4752c4, var(--secondary-color));
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
-  background: linear-gradient(135deg, #ff8533, #ff6600);
+  box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
 }
 
-/* Container for the button (if needed) */
 .button-container {
   text-align: center;
   width: 100%;
@@ -616,7 +662,9 @@ main {
 }
 
 /* --------------------
-   SUPPORTERS SECTION
+   🤝 SUPPORTERS SECTION
+   - Enhanced supporter cards, responsive design
+   - Custom button styles for supporter links
 --------------------- */
 #supporters {
   background: url("Assets/img/contact-bg.jpg") no-repeat center center fixed;
@@ -672,7 +720,7 @@ main {
 .supporter-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: calc(var(--border-radius) * 0.5);
   display: block;
   margin: 0 auto var(--spacing-xs);
 }
@@ -681,6 +729,92 @@ main {
   margin: 0;
   font-size: var(--font-size-sm);
   color: var(--text-primary);
+}
+
+/* Supporters specific styles */
+#supporters-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-family: var(--font-display);
+  margin-bottom: 2.5rem;
+}
+
+.supporter-card-enhanced {
+  background: #181818;
+  border-radius: calc(var(--border-radius-lg) * 1.5);
+  box-shadow: 0 4px 24px rgba(255,102,0,0.10);
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  min-width: 260px;
+  max-width: 100%;
+  transition: transform 0.2s;
+}
+
+.supporter-card-enhanced:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 8px 32px rgba(255,102,0,0.16);
+}
+
+.supporter-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  border-radius: var(--border-radius-lg);
+  background: #222;
+}
+
+.supporter-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.supporter-description {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn-supporter {
+  display: inline-block;
+  width: 100%;
+  max-width: 220px;
+  padding: calc(var(--spacing-sm) * 0.85) 0;
+  background: var(--secondary-color);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 10px rgba(88,101,242,0.13);
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.btn-supporter:hover {
+  background: #4752C4;
+  color: var(--text-primary);
+  transform: translateY(-2px) scale(1.03);
+  text-decoration: none;
+}
+
+/* Supporters responsive styles */
+@media (max-width: 700px) {
+  #supporters .supporter-gallery {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .supporter-card-enhanced {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
 }
 
 /* --------------------
