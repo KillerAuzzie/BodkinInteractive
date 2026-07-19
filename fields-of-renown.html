@@ -3,332 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary Meta Tags -->
+
   <title>Fields of Renown | Bodkin Interactive</title>
   <meta name="title" content="Fields of Renown | Bodkin Interactive" />
-  <meta name="description" content="Fields of Renown is an immersive medieval sandbox RPG set in 13th-century Wales. Join the Bodkin Interactive community and watch the game take shape!" />
-  <meta name="keywords" content="indie game studio, medieval RPG, sandbox game, Fields of Renown, Wales, game development, Bodkin Interactive, 13th century, Gwynedd" />
+  <meta name="description" content="Fields of Renown is a medieval sandbox RPG set in 13th-century Gwynedd, Wales. Fish, farm, trade, and fight as the world takes shape." />
   <meta name="author" content="Bodkin Interactive" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="English" />
-  
-  <!-- Open Graph / Facebook -->
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bodkininteractive.com/fields-of-renown" />
   <meta property="og:title" content="Fields of Renown | Bodkin Interactive" />
-  <meta property="og:description" content="Immersive medieval sandbox RPG set in 13th-century Wales. Join our Discord community!" />
+  <meta property="og:description" content="Medieval sandbox RPG set in 13th-century Wales. Join the Discord and watch development." />
   <meta property="og:image" content="https://bodkininteractive.com/Assets/img/newlogo.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Bodkin Interactive" />
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://bodkininteractive.com/fields-of-renown" />
   <meta property="twitter:title" content="Fields of Renown | Bodkin Interactive" />
-  <meta property="twitter:description" content="Immersive medieval sandbox RPG set in 13th-century Wales." />
+  <meta property="twitter:description" content="Medieval sandbox RPG set in 13th-century Wales." />
   <meta property="twitter:image" content="https://bodkininteractive.com/Assets/img/newlogo.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="Assets/img/logo.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="Assets/img/logo.png" />
+  <link rel="icon" type="image/png" href="Assets/img/logo.png" />
   <link rel="apple-touch-icon" href="Assets/img/logo.png" />
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="preconnect" href="https://discord.com">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  
-  <!-- Structured Data -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="fields-of-renown.css" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Bodkin Interactive",
-    "url": "https://bodkininteractive.com/",
-    "logo": "https://bodkininteractive.com/Assets/img/newlogo.png",
-    "description": "Independent studio behind Fields of Renown and BoddyFit",
-    "sameAs": [
-      "https://discord.gg/sqXW4r2nw9",
-      "https://www.youtube.com/@KillerAuzzie",
-      "https://twitch.tv/killerauzziee",
-      "https://killerauzzie.itch.io"
-    ]
+    "@type": "VideoGame",
+    "name": "Fields of Renown",
+    "description": "Medieval sandbox RPG set in 13th-century Gwynedd, Wales.",
+    "genre": ["RPG", "Sandbox"],
+    "gamePlatform": "PC",
+    "author": {
+      "@type": "Organization",
+      "name": "Bodkin Interactive",
+      "url": "https://bodkininteractive.com/"
+    }
   }
   </script>
 </head>
+<body class="for">
+  <a class="for-skip" href="#main">Skip to content</a>
 
-<body>
-
-  <!-- HEADER / NAV with LOGO & BRAND NAME -->
-  <header role="banner">
-    <div class="header-container">
-      <a href="index.html" class="logo-container" aria-label="Bodkin Interactive Home">
-        <img src="Assets/img/newlogo.png" alt="Bodkin Interactive Logo" class="site-logo" loading="eager" />
-        <span class="brand-name">Bodkin Interactive</span>
+  <header class="for-top" role="banner">
+    <div class="for-top__inner">
+      <a href="index.html" class="for-brand" aria-label="Bodkin Interactive studio home">
+        <img src="Assets/img/newlogo.png" alt="" class="for-brand__logo" height="75" />
+        <span>Bodkin Interactive</span>
       </a>
 
-      <!-- Hamburger Button -->
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-        <span aria-hidden="true">☰</span>
-      </button>
+      <button class="for-hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">☰</button>
 
-      <nav id="nav-menu" role="navigation" aria-label="Main navigation">
-        <ul role="menubar">
-          <li role="none"><a href="index.html" role="menuitem">Studio</a></li>
-          <li role="none"><a href="#home" role="menuitem" aria-current="page">Fields of Renown</a></li>
-          <li role="none"><a href="#about" role="menuitem">About</a></li>
-          <li role="none"><a href="#latest-news" role="menuitem">News</a></li>
-          <li role="none"><a href="#blog-preview" role="menuitem">Blog</a></li>
-          <li role="none"><a href="#roadmap" role="menuitem">Roadmap</a></li>
-          <li role="none"><a href="#supporters" role="menuitem">Supporters</a></li>
-          <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      <nav class="for-nav" id="nav-menu" aria-label="Fields of Renown">
+        <ul>
+          <li><a href="index.html">Studio</a></li>
+          <li><a href="#home" aria-current="page">Fields of Renown</a></li>
+          <li><a href="#world">World</a></li>
+          <li><a href="#gameplay">Gameplay</a></li>
+          <li><a href="#development">Development</a></li>
+          <li><a href="#latest-news">Watch</a></li>
+          <li><a href="#blog-preview">Dev log</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" role="main">
-    <section id="home" aria-labelledby="hero-title">
-      <div class="content-container">
-        <h1 id="hero-title">Welcome to Bodkin Interactive</h1>
-        <p>Join our community & actively watch the game take its shape!</p>
-        <div class="hero-buttons">
-          <a href="https://discord.gg/sqXW4r2nw9" target="_blank" class="button-discord" rel="noopener" aria-label="Join our Discord community server">
-            Join Our Discord
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="about" aria-labelledby="about-title">
-      <div class="content-container">
-        <h2 id="about-title">About</h2>
-        <p>
-          Bodkin Interactive is an independent game studio dedicated to crafting immersive worlds and unique player
-          experiences. Our team is passionate about bringing fresh, engaging gameplay to life.<br><br>
-          <strong>Fields Of Renown</strong> is an immersive medieval sandbox RPG set in 13th-century Gwynedd, Wales, where survival, 
-          strategy, and skill define your journey. As a lone wanderer or a thriving merchant, you'll fish, farm, trade, and 
-          fight to carve out your legacy in a world shaped by seasons, economy, and conflict. Master your craft, forge alliances, 
-          and adapt to the ever-changing landscape as you build your renown in a land filled with opportunity—and danger. <br> 
-          Will you become a respected landowner, a feared warrior, or a legendary explorer? <br> <br><strong>The choice is yours.</strong>
+  <main id="main">
+    <section class="for-hero" id="home" aria-labelledby="hero-brand">
+      <div class="for-hero__bg" aria-hidden="true"></div>
+      <div class="for-hero__inner">
+        <h1 id="hero-brand" class="for-hero__brand">Fields of Renown</h1>
+        <p class="for-hero__lede">
+          A medieval sandbox RPG set in 13th-century Gwynedd — fish, farm, trade, and fight as you carve renown from a living Welsh landscape.
         </p>
-
-        <div class="game-features" aria-labelledby="features-title">
-          <h3 id="features-title">Core Game Features</h3>
-          <div class="features-grid" role="list">
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">🎣</div>
-              <h4>Fishing</h4>
-              <p>Cast your line in Welsh rivers and lakes</p>
-            </div>
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">💰</div>
-              <h4>Economy</h4>
-              <p>Dynamic trading and market systems</p>
-            </div>
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">⚔️</div>
-              <h4>Combat</h4>
-              <p>Medieval warfare and tactical battles</p>
-            </div>
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">🌾</div>
-              <h4>Farming</h4>
-              <p>Cultivate your land and harvest crops</p>
-            </div>
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">🌦️</div>
-              <h4>Weather & Seasons</h4>
-              <p>Dynamic weather affecting gameplay</p>
-            </div>
-            <div class="feature-card" role="listitem">
-              <div class="feature-icon" aria-hidden="true">📈</div>
-              <h4>Skills & Levels</h4>
-              <p>Master various crafts and abilities</p>
-            </div>
-          </div>
+        <div class="for-cta-row">
+          <a class="for-cta for-cta--primary" href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Join our Discord</a>
+          <a class="for-cta for-cta--ghost" href="#latest-news">Watch development</a>
         </div>
+        <p class="for-note">In development · Unreal Engine 5 · Bodkin Interactive</p>
+      </div>
+    </section>
 
-        <div class="development-status" aria-labelledby="dev-status-title">
-          <h3 id="dev-status-title">Development Status</h3>
-          <p>We are currently setting up Unreal 5 with C++ and Blueprints to build the foundation of Fishing mechanics prototype</p>
+    <section class="for-section for-section--split" id="world" aria-labelledby="world-title">
+      <div class="for-section__inner">
+        <div>
+          <h2 id="world-title">The world</h2>
+          <p class="lead">Survival, strategy, and skill in a land shaped by seasons, economy, and conflict.</p>
+          <p>
+            As a lone wanderer or a thriving merchant, you build a life in northwest Wales.
+            Master crafts, forge alliances, and adapt as weather and markets shift —
+            will you become a respected landowner, a feared warrior, or a legendary explorer?
+          </p>
+          <p><strong style="color: var(--for-fog);">The choice is yours.</strong></p>
+        </div>
+        <figure class="for-visual">
+          <img src="Assets/img/CaernavonCastleBackground.jpg" alt="Caernarfon Castle and medieval Welsh landscape inspiration" loading="lazy" width="900" height="500" />
+          <figcaption>Inspired by the castles and coasts of Gwynedd</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="for-section" id="gameplay" aria-labelledby="gameplay-title">
+      <div class="for-section__inner">
+        <h2 id="gameplay-title">Gameplay pillars</h2>
+        <p class="lead">Systems that make the sandbox feel lived-in — not checklist busywork.</p>
+        <ul class="for-pillars">
+          <li>
+            <strong>Fishing</strong>
+            <span>Cast into Welsh rivers and lakes as a core early craft.</span>
+          </li>
+          <li>
+            <strong>Economy</strong>
+            <span>Dynamic trading and markets that reward attention.</span>
+          </li>
+          <li>
+            <strong>Combat</strong>
+            <span>Medieval conflict where timing and tactics matter.</span>
+          </li>
+          <li>
+            <strong>Farming</strong>
+            <span>Cultivate land and harvest with the turning year.</span>
+          </li>
+          <li>
+            <strong>Seasons</strong>
+            <span>Weather and seasons that change how you play.</span>
+          </li>
+          <li>
+            <strong>Skills</strong>
+            <span>Level crafts and abilities as your renown grows.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="for-section for-section--wide" id="development" aria-labelledby="dev-title">
+      <div class="for-section__inner">
+        <h2 id="dev-title">Development</h2>
+        <p class="lead">Building in the open — foundation first, then the systems that make Wales feel alive.</p>
+
+        <aside class="for-status">
+          <strong>Current focus</strong>
+          <p>Unreal Engine 5 with C++ and Blueprints — laying foundations for the fishing mechanics prototype.</p>
+        </aside>
+
+        <ol class="for-roadmap">
+          <li class="current">
+            <h3>Phase 1 · Foundation</h3>
+            <p>Engine setup, core design, and community building.</p>
+            <time datetime="2025-10">Q4 2025 – mid 2026</time>
+          </li>
+          <li>
+            <h3>Phase 2 · Prototype</h3>
+            <p>Movement, fishing, and early environment systems.</p>
+            <time datetime="2026-07">H2 2026</time>
+          </li>
+          <li>
+            <h3>Phase 3 · Alpha</h3>
+            <p>Combat, economy, and closed community testing.</p>
+            <time datetime="2027">2027</time>
+          </li>
+          <li>
+            <h3>Phase 4 · Beta</h3>
+            <p>Full feature set, balancing, and open beta.</p>
+            <time datetime="2027">2027+</time>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="for-section for-section--wide" id="latest-news" aria-labelledby="news-title">
+      <div class="for-section__inner">
+        <h2 id="news-title">Watch</h2>
+        <p class="lead">Latest development video from the Bodkin Interactive channel.</p>
+        <div class="for-video" id="latest-video" role="region" aria-label="YouTube video">Loading video…</div>
+      </div>
+    </section>
+
+    <section class="for-section for-section--wide" id="blog-preview" aria-labelledby="blog-title">
+      <div class="for-section__inner">
+        <h2 id="blog-title">Dev log</h2>
+        <p class="lead">Longer notes from the making of Fields of Renown.</p>
+        <div class="for-posts" role="list">
+          <a class="for-post" href="blog-post-engine-selection.html" role="listitem">
+            <time datetime="2025-08-25">25 August 2025</time>
+            <h3>Engine selection: Godot vs Unreal</h3>
+            <p>How we weighed both engines for a medieval sandbox — and where we landed.</p>
+            <span class="for-post__more">Read post →</span>
+          </a>
+          <a class="for-post" href="coming-soon.html" role="listitem">
+            <time>Coming soon</time>
+            <h3>Fishing system</h3>
+            <p>A look at fishing and what it means for Bodkin Interactive.</p>
+            <span class="for-post__more">Preview →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="latest-news" aria-labelledby="news-title">
-      <h2 id="news-title">Latest News!</h2>
-      <div class="content-container">
-        <div class="video-container" aria-label="Latest development video">
-          <div id="latest-video" role="region" aria-label="YouTube video content">Loading video...</div>
+    <section class="for-section for-section--wide" id="community" aria-labelledby="community-title">
+      <div class="for-section__inner">
+        <h2 id="community-title">Community</h2>
+        <p class="lead">Follow along, share feedback, and meet the crews who back the project.</p>
+        <div class="for-cta-row for-cta-row--spaced">
+          <a class="for-cta for-cta--primary" href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Join Discord</a>
+          <a class="for-cta for-cta--ghost" href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener">YouTube</a>
         </div>
-      </div>
-    </section>
 
-    <!-- Blog Section -->
-    <section id="blog-preview" aria-labelledby="blog-preview-title">
-      <div class="content-container">
-        <h2 id="blog-preview-title">Latest Blog Posts</h2>
-        <p>Follow our development journey with detailed updates and insights</p>
-        
-        <div class="blog-preview-grid" role="list">
-          <!-- Blog Post 1 -->
-          <article class="blog-preview-card" role="listitem">
-            <div class="blog-preview-image" aria-hidden="true">🎮</div>
-            <div class="blog-preview-content">
-              <div class="blog-preview-date">25th of August, 2025</div>
-              <h3 class="blog-preview-title">Engine Selection: Godot vs Unreal</h3>
-              <p class="blog-preview-excerpt">
-                We're carefully evaluating both Godot and Unreal Engine for Fields of Renown. 
-                This critical decision will shape the technical capabilities and visual fidelity 
-                of our medieval world...
-              </p>
-              
-              <a href="blog-post-engine-selection.html" class="read-more">Read Full Post →</a>
-            </div>
-          </article>
-
-          <!-- Blog Post 2 -->
-          
-          <article class="blog-preview-card" role="listitem">
-            <div class="blog-preview-image" aria-hidden="true">📜</div>
-            <div class="blog-preview-content">
-              <div class="blog-preview-date">Coming soon</div>
-              <h3 class="blog-preview-title">Fishing System</h3>
-              <p class="blog-preview-excerpt">
-                A brief outlook into fishing and what it means to us at Bodkin Interactive.
-              </p>
-              <a href="coming-soon.html" class="read-more">Read Full Post →</a>
-            </div>
-          </article>
-
-          <!-- Blog Post 3 
-          <article class="blog-preview-card" role="listitem">
-            <div class="blog-preview-image" aria-hidden="true">⚔️</div>
-            <div class="blog-preview-content">
-              <div class="blog-preview-date">January 5, 2025</div>
-              <h3 class="blog-preview-title">Combat System Design</h3>
-              <p class="blog-preview-excerpt">
-                Medieval combat in Fields of Renown will be tactical and skill-based. 
-                We're designing a system that rewards strategy and timing, while remaining 
-                accessible to players...
-              </p>
-              <a href="blog.html#combat-system-design" class="read-more">Read Full Post →</a>
-            </div>
-          </article>
--->
-          <!-- Blog Post 4 
-          <article class="blog-preview-card" role="listitem">
-            <div class="blog-preview-image" aria-hidden="true">🌾</div>
-            <div class="blog-preview-content">
-              <div class="blog-preview-date">December 28, 2024</div>
-              <h3 class="blog-preview-title">Farming & Economy Systems</h3>
-              <p class="blog-preview-excerpt">
-                The farming and economy systems are core to the Fields of Renown experience. 
-                Players will cultivate land, trade goods, and build their wealth in a 
-                dynamic medieval economy...
-              </p>
-              <a href="blog.html" class="read-more">Read Full Post →</a>
-            </div>
-          </article>
-        </div>
--->
-      </div>
-      
-    </section>
-
-    <section id="roadmap" aria-labelledby="roadmap-title">
-      <div class="content-container">
-        <h2 id="roadmap-title">Development Roadmap</h2>
-        <div class="roadmap-timeline" role="list">
-          <div class="roadmap-item current" role="listitem">
-            <div class="roadmap-marker" aria-hidden="true"></div>
-            <div class="roadmap-content">
-              <h4>Phase 1: Foundation (Current)</h4>
-              <p>Engine selection, core mechanics design, and community building</p>
-              <span class="roadmap-date">Q4 2025</span>
-            </div>
-          </div>
-          <div class="roadmap-item" role="listitem">
-            <div class="roadmap-marker" aria-hidden="true"></div>
-            <div class="roadmap-content">
-              <h4>Phase 2: Prototype</h4>
-              <p>Basic movement, fishing mechanics, and environment systems</p>
-              <span class="roadmap-date">Q2 2026</span>
-            </div>
-          </div>
-          <div class="roadmap-item" role="listitem">
-            <div class="roadmap-marker" aria-hidden="true"></div>
-            <div class="roadmap-content">
-              <h4>Phase 3: Alpha</h4>
-              <p>Combat system, economy, and closed testing with community</p>
-              <span class="roadmap-date">Q3 2026</span>
-            </div>
-          </div>
-          <div class="roadmap-item" role="listitem">
-            <div class="roadmap-marker" aria-hidden="true"></div>
-            <div class="roadmap-content">
-              <h4>Phase 4: Beta</h4>
-              <p>Full feature set, balancing, and open beta testing</p>
-              <span class="roadmap-date">Q4 2026</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section id="supporters" aria-labelledby="supporters-title">
-      <div class="content-container">
-        <h2 id="supporters-title">Supporters</h2>
-        <div class="supporter-gallery" role="list">
-          <div class="supporter-card-enhanced" role="listitem">
-            <img src="Assets/img/Uld_Logo_minified.png" alt="ULD - United Lads Division Logo" loading="lazy" class="supporter-logo" />
-            <p class="supporter-name"><strong>ULD</strong></p>
-            <p class="supporter-description">
-              <strong>United Lads Division</strong> – the longest running competitive squad team combining the strength of Oceanic and South East Asian players.
-            </p>
-            <a href="https://discord.gg/ULD" target="_blank" class="btn-supporter" rel="noopener" aria-label="Join ULD Discord server">
-              Join ULD Discord
-            </a>
-          </div>
-          <div class="supporter-card-enhanced" role="listitem">
-            <img src="Assets/img/clifford.png" alt="Clifford the Big Red Dog - Game Development Supporter" loading="lazy" class="supporter-logo" />
-            <p class="supporter-name"><strong>CLIFFORD</strong></p>
-            <p class="supporter-description">
-              <strong>Clifford</strong>, the big red dog, a longtime supporter of our game development and a good friend of ours! An absolute legend of all time!
-            </p>
-            <a href="https://discord.gg/bigredrs2" target="_blank" class="btn-supporter" rel="noopener" aria-label="Join Clifford's Discord server">
-              Join Clifford's Discord!
-            </a>
-          </div>
-        </div>
+        <ul class="for-supporters">
+          <li class="for-supporter">
+            <img src="Assets/img/Uld_Logo_minified.png" alt="ULD logo" loading="lazy" />
+            <h3>ULD</h3>
+            <p>United Lads Division — long-running competitive squad bridging Oceanic and Southeast Asian players.</p>
+            <a href="https://discord.gg/ULD" target="_blank" rel="noopener">Join ULD Discord →</a>
+          </li>
+          <li class="for-supporter">
+            <img src="Assets/img/clifford.png" alt="Clifford" loading="lazy" />
+            <h3>Clifford</h3>
+            <p>Longtime friend of the project and a steadfast supporter of our game development.</p>
+            <a href="https://discord.gg/bigredrs2" target="_blank" rel="noopener">Join Clifford’s Discord →</a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="social-links">
-      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener" aria-label="Join our Discord community">Discord</a>
-      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener" aria-label="Watch our YouTube channel">YouTube</a>
-      <a href="https://twitch.tv/killerauzziee" target="_blank" rel="noopener" aria-label="Follow us on Twitch">Twitch</a>
-      <a href="https://killerauzzie.itch.io" target="_blank" rel="noopener" aria-label="Check out our games on itch.io">itch.io</a>
+  <footer class="for-footer" role="contentinfo">
+    <div class="for-footer__links">
+      <a href="index.html">Studio</a>
+      <a href="boddyfit.html">BoddyFit</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://twitch.tv/killerauzziee" target="_blank" rel="noopener">Twitch</a>
+      <a href="https://killerauzzie.itch.io" target="_blank" rel="noopener">itch.io</a>
     </div>
     <p>&copy; 2026 Bodkin Interactive. All rights reserved.</p>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <button id="back-to-top" class="for-topbtn" type="button" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
