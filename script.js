@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navMenu && hamburgerBtn) {
         navMenu.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", () => {
-                if (window.innerWidth <= 860) {
+                if (window.innerWidth <= 900) {
                     navMenu.classList.remove("active");
                     hamburgerBtn.setAttribute("aria-expanded", "false");
                 }
