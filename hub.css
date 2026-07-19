@@ -1,0 +1,325 @@
+/* Bodkin Interactive — studio host page */
+
+:root {
+  --hub-ink: #0c0a09;
+  --hub-fog: #f5f0e8;
+  --hub-muted: #a8a29e;
+  --hub-line: rgba(245, 240, 232, 0.12);
+  --hub-game: #c45c26;
+  --hub-game-soft: rgba(196, 92, 38, 0.18);
+  --hub-fit: #10b981;
+  --hub-fit-soft: rgba(16, 185, 129, 0.14);
+  --hub-font: "DM Sans", system-ui, sans-serif;
+  --hub-display: "Syne", system-ui, sans-serif;
+  --hub-medieval: "Cinzel", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.hub {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--hub-ink);
+  color: var(--hub-fog);
+  font-family: var(--hub-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  background: var(--hub-fog);
+  color: var(--hub-ink);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hub-header {
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--hub-line);
+  background: rgba(28, 25, 23, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.hub-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hub-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--hub-fog);
+  text-decoration: none;
+  font-family: var(--hub-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.hub-brand__logo {
+  width: auto;
+  height: 75px;
+  object-fit: contain;
+}
+
+.hub-nav a {
+  color: var(--hub-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hub-nav a:hover,
+.hub-nav a:focus-visible {
+  color: var(--hub-fog);
+}
+
+.hub-hero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 91px);
+  padding: 2rem 1.5rem 3.5rem;
+  overflow: hidden;
+}
+
+.hub-hero__atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(196, 92, 38, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 82% 55%, rgba(16, 185, 129, 0.16), transparent 50%),
+    linear-gradient(180deg, #1c1917 0%, var(--hub-ink) 55%, #020617 100%);
+  animation: hub-glow 12s ease-in-out infinite alternate;
+}
+
+.hub-hero__atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("Assets/img/mountains-6157049.jpg");
+  background-size: cover;
+  background-position: center 35%;
+  opacity: 0.18;
+  mix-blend-mode: luminosity;
+  animation: hub-drift 28s ease-in-out infinite alternate;
+}
+
+@keyframes hub-glow {
+  from { filter: saturate(1); }
+  to { filter: saturate(1.15) brightness(1.05); }
+}
+
+@keyframes hub-drift {
+  from { transform: scale(1.05) translate3d(0, 0, 0); }
+  to { transform: scale(1.12) translate3d(-1.5%, 1%, 0); }
+}
+
+.hub-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: hub-rise 0.9s ease-out both;
+}
+
+@keyframes hub-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hub-hero__eyebrow {
+  font-family: var(--hub-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.85rem;
+}
+
+.hub-hero h1 {
+  font-family: var(--hub-font);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  color: var(--hub-muted);
+  margin-bottom: 0.65rem;
+}
+
+.hub-hero__lede {
+  max-width: 34rem;
+  color: #d6d3d1;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin-bottom: 2.25rem;
+}
+
+.hub-paths {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  list-style: none;
+}
+
+@media (min-width: 800px) {
+  .hub-paths {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.hub-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hub-line);
+  border-radius: 14px;
+  background: rgba(12, 10, 9, 0.55);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hub-path:hover,
+.hub-path:focus-visible {
+  transform: translateY(-4px);
+  outline: none;
+}
+
+.hub-path--game:hover,
+.hub-path--game:focus-visible {
+  border-color: rgba(196, 92, 38, 0.55);
+  background: rgba(28, 16, 10, 0.75);
+  box-shadow: 0 18px 40px rgba(196, 92, 38, 0.12);
+}
+
+.hub-path--fit:hover,
+.hub-path--fit:focus-visible {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(2, 16, 14, 0.75);
+  box-shadow: 0 18px 40px rgba(16, 185, 129, 0.1);
+}
+
+.hub-path__kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hub-muted);
+}
+
+.hub-path--game .hub-path__name {
+  font-family: var(--hub-medieval);
+  font-size: 1.45rem;
+  color: #fdba74;
+}
+
+.hub-path--fit .hub-path__name {
+  font-family: var(--hub-display);
+  font-weight: 700;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  color: #34d399;
+}
+
+.hub-path__desc {
+  color: #d6d3d1;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+}
+
+.hub-path__cta {
+  margin-top: auto;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.hub-path--game .hub-path__cta {
+  color: var(--hub-game);
+}
+
+.hub-path--fit .hub-path__cta {
+  color: var(--hub-fit);
+}
+
+.hub-footer {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: center;
+  color: var(--hub-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .hub-header__inner {
+    padding: 0 1rem;
+    min-height: 60px;
+  }
+
+  .hub-brand {
+    font-size: 1.1rem;
+  }
+
+  .hub-brand__logo {
+    height: 60px;
+  }
+
+  .hub-hero {
+    min-height: calc(100vh - 76px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-hero__atmosphere,
+  .hub-hero__atmosphere::after,
+  .hub-hero__content,
+  .hub-path {
+    animation: none !important;
+    transition: none !important;
+  }
+}

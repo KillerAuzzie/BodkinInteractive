@@ -1,10 +1,13 @@
 # Bodkin Interactive
 
-Welcome to the official repository for [Bodkin Interactive](https://bodkininteractive.github.io/), an independent game studio dedicated to crafting immersive worlds and unique player experiences.
+Welcome to the official repository for [Bodkin Interactive](https://bodkininteractive.com/), an independent studio behind **Fields of Renown** and **BoddyFit**.
 
 ## About Us
 
-At Bodkin Interactive, our passion lies in bringing fresh, engaging gameplay to life. Our current project, **Fields of Renown**, is a medieval sandbox RPG that blends strategy, adventure, and sandbox experiences set in 13th-century Gwynedd, North West Wales.
+Bodkin Interactive builds immersive games and practical apps. Our current projects:
+
+- **Fields of Renown** — a medieval sandbox RPG set in 13th-century Gwynedd, North West Wales
+- **BoddyFit** — an offline-first Run + Gym Coach for Android
 
 ## Fields of Renown
 
@@ -16,19 +19,17 @@ At Bodkin Interactive, our passion lies in bringing fresh, engaging gameplay to 
 - **Experience** dynamic weather and seasonal changes
 - **Participate** in combat scenarios to defend your holdings
 
-We are currently evaluating game engines, with [Godot](https://godotengine.org/) and [Unreal Engine](https://www.unrealengine.com/) under consideration, to ensure the best possible experience for our players.
-
 ## Repository Overview
 
-This repository contains the source code and assets for our official website, [bodkininteractive.github.io](https://bodkininteractive.github.io/). The website serves as a hub for updates, announcements, and community engagement.
+This repository contains the source for [bodkininteractive.com](https://bodkininteractive.com/). The root page is a studio hub; product pages live under their own paths.
 
 ### Structure
 
-- **`index.html`**: The main landing page with enhanced SEO and accessibility
-- **`contact.html`**: Contact form for inquiries with improved UX
-- **`style.css`**: Optimized stylesheets with CSS custom properties
-- **`script.js`**: Enhanced JavaScript with better error handling
-- **`Assets/`**: Directory containing images and other media assets
-- **`robots.txt`**: Search engine crawling instructions
-- **`sitemap.xml`**: XML sitemap for better SEO
-- **`404.html`**: Custom
+- **`index.html`** / **`hub.css`**: Studio host page (links to both products)
+- **`fields-of-renown.html`**: Game site (previous homepage content)
+- **`boddyfit.html`** / **`boddyfit.css`**: BoddyFit marketing landing
+- **`privacy.html`**, **`terms.html`**, **`legal.html`**: BoddyFit legal docs
+- **`contact.html`**: Contact form
+- **`style.css`** / **`script.js`**: Shared styles and scripts for the game pages
+- **`Assets/`**: Images and media
+- **`robots.txt`** / **`sitemap.xml`** / **`404.html`**: SEO and error handling
