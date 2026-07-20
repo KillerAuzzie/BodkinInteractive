@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Bodkin Interactive</title>
-  <meta name="description" content="Contact Bodkin Interactive about BoddyFit, Fields of Renown, or studio collaboration." />
+  <meta name="description" content="Contact Bodkin Interactive about BoddyFit, Fields of Renown, or the studio." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bodkininteractive.com/contact/" />
 
@@ -28,7 +28,8 @@
 
   <header class="bf-top">
     <div class="bf-top__inner">
-      <a class="bf-logo" href="../">
+      <a class="bf-logo bf-logo--studio" href="../">
+        <img src="../Assets/img/newlogo.png" alt="" class="bf-logo__mark" height="40" width="40" />
         Bodkin Interactive
         <span class="bf-logo__tag">Studio</span>
       </a>
@@ -37,69 +38,56 @@
         <a href="../boddyfit/">BoddyFit</a>
         <a href="../fields-of-renown/">Fields of Renown</a>
         <a href="../support/">Support</a>
-        <a href="../contact/" aria-current="page">Contact</a>
+        <a href="./" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="bf-contact" aria-labelledby="contact-title">
-      <div class="bf-contact__inner">
+    <section class="bf-contact-hero" aria-labelledby="contact-title">
+      <div class="bf-contact-hero__bg" aria-hidden="true"></div>
+      <div class="bf-contact-hero__inner">
+        <p class="bf-contact-hero__eyebrow">Bodkin Interactive</p>
         <h1 id="contact-title">Contact Us</h1>
-        <p class="bf-contact__lede">
-          Got a question or feedback? Use the form below and we’ll get back to you as soon as possible.
+        <p class="lead">
+          Got a question or feedback? Send a message and we’ll get back to you as soon as possible.
         </p>
-        <p class="bf-contact__alt">
-          Alternatively, email us at
+        <p class="bf-contact-hero__alt">
+          Or email
           <a href="mailto:bodkininteractive@gmail.com">bodkininteractive@gmail.com</a>
-          or message us on
-          <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Discord</a>.
+          ·
+          <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Discord</a>
         </p>
 
         <form action="https://formspree.io/f/mpwpawyq" method="POST" class="bf-contact-form" aria-labelledby="contact-title">
           <div class="bf-form-group">
             <label for="name" class="bf-form-label">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              autocomplete="name"
-              class="bf-form-input"
-              placeholder="Your full name"
-              aria-required="true"
-            />
+            <input type="text" id="name" name="name" required class="bf-form-control" placeholder="Your full name" autocomplete="name" />
           </div>
 
           <div class="bf-form-group">
             <label for="email" class="bf-form-label">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autocomplete="email"
-              class="bf-form-input"
-              placeholder="your@email.com"
-              aria-required="true"
-            />
+            <input type="email" id="email" name="email" required class="bf-form-control" placeholder="your@email.com" autocomplete="email" />
+          </div>
+
+          <div class="bf-form-group">
+            <label for="about" class="bf-form-label">About</label>
+            <select id="about" name="about" required class="bf-form-control bf-form-control--select">
+              <option value="" disabled selected>What is this about?</option>
+              <option value="BoddyFit (app)">BoddyFit (app)</option>
+              <option value="Fields of Renown (game)">Fields of Renown (game)</option>
+              <option value="Studio / other">Studio / other</option>
+            </select>
           </div>
 
           <div class="bf-form-group">
             <label for="message" class="bf-form-label">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              class="bf-form-textarea"
-              placeholder="Tell us about your question, feedback, or collaboration idea…"
-              aria-required="true"
-            ></textarea>
+            <textarea id="message" name="message" required class="bf-form-control bf-form-control--area" placeholder="Tell us about your question, feedback, or collaboration idea…"></textarea>
           </div>
 
           <button type="submit" class="bf-form-submit">Send Message</button>
           <p id="form-success" class="bf-form-success" hidden role="status" aria-live="polite">
-            Message sent successfully. We’ll reply soon.
+            Message sent — thanks. We’ll reply soon.
           </p>
         </form>
       </div>
@@ -144,7 +132,7 @@
         successMessage.hidden = false;
         form.reset();
       } catch (error) {
-        alert("Something went wrong. Please try again or email bodkininteractive@gmail.com");
+        alert("Something went wrong. Please email bodkininteractive@gmail.com directly.");
       } finally {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
