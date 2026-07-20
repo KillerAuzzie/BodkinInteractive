@@ -113,10 +113,12 @@ body.hub {
 .hub-footer {
   position: relative;
   z-index: 1;
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 2rem;
   text-align: center;
   color: var(--hub-muted);
   font-size: 0.85rem;
+  border-top: 1px solid var(--hub-line);
+  background: rgba(12, 10, 9, 0.85);
 }
 
 .hub-footer__links {
@@ -124,7 +126,7 @@ body.hub {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem 1.15rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .hub-footer__links a {
@@ -143,7 +145,7 @@ body.hub {
   display: flex;
   align-items: center;
   min-height: calc(100vh - 91px);
-  padding: 2rem 1.5rem 3.5rem;
+  padding: 2.5rem 1.5rem 3.5rem;
   overflow: hidden;
 }
 
@@ -151,8 +153,8 @@ body.hub {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(196, 92, 38, 0.22), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 82% 55%, rgba(16, 185, 129, 0.16), transparent 50%),
+    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(196, 92, 38, 0.24), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 82% 55%, rgba(16, 185, 129, 0.18), transparent 50%),
     linear-gradient(180deg, #1c1917 0%, var(--hub-ink) 55%, #020617 100%);
   animation: hub-glow 12s ease-in-out infinite alternate;
 }
@@ -164,7 +166,7 @@ body.hub {
   background-image: url("Assets/img/mountains-6157049.jpg");
   background-size: cover;
   background-position: center 35%;
-  opacity: 0.18;
+  opacity: 0.2;
   mix-blend-mode: luminosity;
   animation: hub-drift 28s ease-in-out infinite alternate;
 }
@@ -202,26 +204,27 @@ body.hub {
 .hub-hero__eyebrow {
   font-family: var(--hub-display);
   font-weight: 800;
-  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(1.85rem, 5.2vw, 3.15rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .hub-hero h1 {
   font-family: var(--hub-font);
   font-weight: 500;
-  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
   color: var(--hub-muted);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.7rem;
+  max-width: 28rem;
 }
 
 .hub-hero__lede {
-  max-width: 34rem;
+  max-width: 36rem;
   color: #d6d3d1;
   font-size: 1.05rem;
   line-height: 1.55;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.35rem;
 }
 
 .hub-paths {
@@ -234,7 +237,7 @@ body.hub {
 @media (min-width: 800px) {
   .hub-paths {
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    gap: 1.35rem;
   }
 }
 
@@ -242,59 +245,80 @@ body.hub {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.45rem;
-  padding: 1.5rem 1.4rem;
+  gap: 0.4rem;
+  min-height: 100%;
+  padding: 1.65rem 1.5rem 1.5rem;
   text-decoration: none;
   color: inherit;
   border: 1px solid var(--hub-line);
-  border-radius: 14px;
-  background: rgba(12, 10, 9, 0.55);
-  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  background: rgba(12, 10, 9, 0.62);
+  backdrop-filter: blur(12px);
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .hub-path:hover,
 .hub-path:focus-visible {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   outline: none;
+}
+
+.hub-path--game {
+  box-shadow: inset 0 1px 0 rgba(253, 186, 116, 0.08);
+}
+
+.hub-path--fit {
+  box-shadow: inset 0 1px 0 rgba(52, 211, 153, 0.08);
 }
 
 .hub-path--game:hover,
 .hub-path--game:focus-visible {
-  border-color: rgba(196, 92, 38, 0.55);
-  background: rgba(28, 16, 10, 0.75);
-  box-shadow: 0 18px 40px rgba(196, 92, 38, 0.12);
+  border-color: rgba(196, 92, 38, 0.6);
+  background: rgba(28, 16, 10, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(253, 186, 116, 0.12),
+    0 22px 48px rgba(196, 92, 38, 0.16);
 }
 
 .hub-path--fit:hover,
 .hub-path--fit:focus-visible {
-  border-color: rgba(16, 185, 129, 0.5);
-  background: rgba(2, 16, 14, 0.75);
-  box-shadow: 0 18px 40px rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.55);
+  background: rgba(2, 16, 14, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(52, 211, 153, 0.12),
+    0 22px 48px rgba(16, 185, 129, 0.14);
 }
 
 .hub-path__kicker {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--hub-muted);
 }
 
+.hub-path--game .hub-path__kicker {
+  color: rgba(253, 186, 116, 0.75);
+}
+
+.hub-path--fit .hub-path__kicker {
+  color: rgba(52, 211, 153, 0.8);
+}
+
 .hub-path--game .hub-path__name {
   font-family: var(--hub-medieval);
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   color: #fdba74;
 }
 
 .hub-path--fit .hub-path__name {
   font-family: var(--hub-display);
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02em;
   color: #34d399;
 }
@@ -302,14 +326,29 @@ body.hub {
 .hub-path__desc {
   color: #d6d3d1;
   font-size: 0.98rem;
-  line-height: 1.45;
-  margin-bottom: 0.35rem;
+  line-height: 1.5;
+  margin-top: 0.15rem;
+}
+
+.hub-path__meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--hub-muted);
+  letter-spacing: 0.01em;
 }
 
 .hub-path__cta {
   margin-top: auto;
+  padding-top: 1.1rem;
   font-size: 0.92rem;
   font-weight: 600;
+  transition: letter-spacing 0.2s ease;
+}
+
+.hub-path:hover .hub-path__cta,
+.hub-path:focus-visible .hub-path__cta {
+  letter-spacing: 0.02em;
 }
 
 .hub-path--game .hub-path__cta {
@@ -318,6 +357,82 @@ body.hub {
 
 .hub-path--fit .hub-path__cta {
   color: var(--hub-fit);
+}
+
+/* Connect — below the fold, one job */
+.hub-connect {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--hub-line);
+  background:
+    linear-gradient(180deg, rgba(28, 25, 23, 0.5) 0%, rgba(12, 10, 9, 0.95) 100%);
+}
+
+.hub-connect__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hub-connect h2 {
+  font-family: var(--hub-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.hub-connect__lede {
+  color: var(--hub-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.hub-connect__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.hub-connect__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--hub-line);
+  background: rgba(12, 10, 9, 0.55);
+  color: var(--hub-fog);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hub-connect__link:hover,
+.hub-connect__link:focus-visible {
+  border-color: rgba(245, 240, 232, 0.28);
+  background: rgba(28, 25, 23, 0.85);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.hub-connect__link--discord {
+  border-color: rgba(88, 101, 242, 0.45);
+  background: rgba(88, 101, 242, 0.16);
+}
+
+.hub-connect__link--discord:hover,
+.hub-connect__link--discord:focus-visible {
+  border-color: rgba(88, 101, 242, 0.7);
+  background: rgba(88, 101, 242, 0.28);
 }
 
 @media (max-width: 600px) {
@@ -336,6 +451,11 @@ body.hub {
 
   .hub-hero {
     min-height: calc(100vh - 76px);
+    padding: 2rem 1rem 2.75rem;
+  }
+
+  .hub-connect {
+    padding: 2.5rem 1rem;
   }
 }
 
@@ -343,7 +463,8 @@ body.hub {
   .hub-hero__atmosphere,
   .hub-hero__atmosphere::after,
   .hub-hero__content,
-  .hub-path {
+  .hub-path,
+  .hub-connect__link {
     animation: none !important;
     transition: none !important;
   }
