@@ -2,130 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Bodkin Interactive | Get in Touch</title>
-  <meta name="description" content="Contact Bodkin Interactive for questions, feedback, or collaboration opportunities. Email us or join our Discord community!" />
-  <meta name="keywords" content="contact Bodkin Interactive, game studio contact, indie game development, collaboration" />
-  
-  <!-- Open Graph / Facebook -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Bodkin Interactive</title>
+  <meta name="description" content="Contact Bodkin Interactive about BoddyFit, Fields of Renown, or studio collaboration." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bodkininteractive.com/contact/" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact Bodkin Interactive" />
-  <meta property="og:description" content="Get in touch with our indie game studio for questions, feedback, or collaboration opportunities." />
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <meta property="og:url" content="https://bodkininteractive.com/contact/" />
+  <meta property="og:title" content="Contact — Bodkin Interactive" />
+  <meta property="og:description" content="Get in touch about BoddyFit, Fields of Renown, or studio questions." />
+  <meta property="og:site_name" content="Bodkin Interactive" />
+
+  <link rel="icon" type="image/png" href="../Assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../boddyfit.css" />
+  <style>
+    body.bf { --bf-font: "DM Sans", system-ui, sans-serif; --bf-mono: "IBM Plex Mono", ui-monospace, monospace; }
+  </style>
 </head>
-<body style="background: url('../Assets/img/contact-bg.jpg') no-repeat center center fixed; background-size: cover;">
-    <div class="overlay"></div>
-    
-  <!-- HEADER / NAV -->
-  <header role="banner">
-    <div class="header-container">
-        <a href="../" class="logo-container" aria-label="Return to Bodkin Interactive Home">
-            <img src="../Assets/img/newlogo.png" alt="Bodkin Interactive Logo" class="site-logo" loading="eager" />
-            <span class="brand-name">Bodkin Interactive</span>
-        </a>
+<body class="bf">
+  <a class="bf-skip" href="#main">Skip to content</a>
 
-        <!-- Hamburger Button -->
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-
-        <nav id="nav-menu" role="navigation" aria-label="Main navigation">
-            <ul role="menubar">
-                <li role="none"><a href="../" role="menuitem">Studio</a></li>
-                <li role="none"><a href="../fields-of-renown/" role="menuitem">Fields of Renown</a></li>
-                <li role="none"><a href="../boddyfit/" role="menuitem">BoddyFit</a></li>
-            </ul>
-        </nav>
+  <header class="bf-top">
+    <div class="bf-top__inner">
+      <a class="bf-logo" href="../">
+        Bodkin Interactive
+        <span class="bf-logo__tag">Studio</span>
+      </a>
+      <nav aria-label="Studio">
+        <a href="../">Studio</a>
+        <a href="../boddyfit/">BoddyFit</a>
+        <a href="../fields-of-renown/">Fields of Renown</a>
+        <a href="../support/">Support</a>
+        <a href="../contact/" aria-current="page">Contact</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-  <main id="main-content" role="main">
-    <section id="contact" aria-labelledby="contact-title">
-        <div class="content-container">
-          <h2 id="contact-title">Contact Us</h2>
-          <p>Got a question or feedback? Use the form below and we'll get back to you as soon as possible!</p><br>
-          <p>Alternatively, email us at <a href="mailto:bodkininteractive@gmail.com">bodkininteractive@gmail.com</a> or message us on Discord.</p>
+  <main id="main" class="bf-legal-doc">
+    <h1>Contact</h1>
+    <p class="meta">Questions about BoddyFit, Fields of Renown, or the studio — send a note and we’ll get back to you.</p>
 
-          <!-- Contact Form -->
-          <form action="https://formspree.io/f/mpwpawyq" method="POST" class="contact-form" aria-labelledby="contact-title">
-            <div class="form-group">
-              <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" name="name" required class="form-input" placeholder="Your full name" aria-required="true">
-            </div>
-          
-            <div class="form-group">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com" aria-required="true">
-            </div>
-          
-            <div class="form-group">
-              <label for="message" class="form-label">Message:</label>
-              <textarea id="message" name="message" required class="form-textarea" placeholder="Tell us about your question, feedback, or collaboration idea..." aria-required="true"></textarea>
-            </div>
-          
-            <button type="submit" class="form-submit">Send Message</button>
-          </form>
+    <div class="bf-doc-card bf-contact-card">
+      <p class="bf-contact-alt">
+        Prefer email?
+        <a href="mailto:bodkininteractive@gmail.com">bodkininteractive@gmail.com</a>
+        · Discord:
+        <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">community server</a>
+      </p>
 
-          <!-- Confirmation Message (Hidden, will show after submission) -->
-          <p id="form-success" class="form-success" role="status" aria-live="polite">✔️ Message sent successfully!</p>
+      <form action="https://formspree.io/f/mpwpawyq" method="POST" class="bf-form" aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title" class="bf-form__title">Send a message</h2>
 
+        <div class="bf-form__field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
         </div>
-    </section>
+
+        <div class="bf-form__field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@email.com" />
+        </div>
+
+        <div class="bf-form__field">
+          <label for="topic">About</label>
+          <select id="topic" name="topic">
+            <option value="BoddyFit">BoddyFit</option>
+            <option value="Fields of Renown">Fields of Renown</option>
+            <option value="Studio / other">Studio / other</option>
+          </select>
+        </div>
+
+        <div class="bf-form__field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="6" placeholder="Tell us what you need help with…"></textarea>
+        </div>
+
+        <button type="submit" class="bf-cta">Send message</button>
+        <p id="form-success" class="bf-form__success" hidden role="status" aria-live="polite">Message sent — thanks. We’ll reply soon.</p>
+      </form>
+    </div>
+
+    <p class="bf-note" style="margin-top: 1.25rem;">
+      App support shortcuts:
+      <a href="../support/">BoddyFit support</a> ·
+      <a href="../privacy/">Privacy</a> ·
+      <a href="../legal/">Copyright</a>
+    </p>
   </main>
 
-  <footer role="contentinfo">
-    <div class="social-links">
-      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener" aria-label="Join our Discord community">Discord</a>
-      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener" aria-label="Watch our YouTube channel">YouTube</a>
-      <a href="https://twitch.tv/killerauzziee" target="_blank" rel="noopener" aria-label="Follow us on Twitch">Twitch</a>
-      <a href="https://killerauzzie.itch.io" target="_blank" rel="noopener" aria-label="Check out our games on itch.io">itch.io</a>
+  <footer class="bf-footer">
+    <div class="bf-footer__inner">
+      <div class="bf-footer__links">
+        <a href="../">Studio</a>
+        <a href="../boddyfit/">BoddyFit</a>
+        <a href="../fields-of-renown/">Fields of Renown</a>
+        <a href="../support/">Support</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../legal/">Copyright</a>
+      </div>
+      <p>© 2026 Bodkin Interactive. All rights reserved.</p>
     </div>
-    <p>&copy; 2025 Bodkin Interactive. All rights reserved.</p>
   </footer>
-  
-  <script src="../script.js"></script>
+
   <script>
-    // Enhanced form handling with better error handling and accessibility
-    document.querySelector("form").addEventListener("submit", async function(event) {
-        event.preventDefault();
-        
-        const form = this;
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        const successMessage = document.getElementById("form-success");
-        
-        // Show loading state
-        submitButton.textContent = "Sending...";
-        submitButton.disabled = true;
-        submitButton.setAttribute("aria-busy", "true");
-        
-        try {
-            const formData = new FormData(form);
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            if (response.ok) {
-                successMessage.style.display = "block";
-                form.reset();
-                successMessage.focus(); // Move focus to success message for screen readers
-            } else {
-                throw new Error(`HTTP ${response.status}`);
-            }
-        } catch (error) {
-            console.error("Form submission error:", error);
-            alert("Something went wrong. Please try again or contact us directly at bodkininteractive@gmail.com");
-        } finally {
-            // Restore button state
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-            submitButton.removeAttribute("aria-busy");
-        }
+    document.querySelector(".bf-form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const form = this;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      const successMessage = document.getElementById("form-success");
+
+      submitButton.textContent = "Sending…";
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+      successMessage.hidden = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        successMessage.hidden = false;
+        form.reset();
+      } catch (error) {
+        alert("Something went wrong. Please email bodkininteractive@gmail.com directly.");
+      } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
     });
   </script>
 </body>

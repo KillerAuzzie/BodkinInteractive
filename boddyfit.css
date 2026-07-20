@@ -352,6 +352,10 @@ body.bf {
 
 body.bf-lightbox-open {
   overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .bf-lightbox[hidden] {
@@ -754,6 +758,95 @@ body.bf-lightbox-open {
   border: 1px solid var(--bf-border);
   border-radius: 12px;
   background: var(--bf-surface);
+}
+
+.bf-contact-card {
+  max-width: 560px;
+}
+
+.bf-contact-alt {
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.bf-form__title {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: var(--bf-text);
+}
+
+.bf-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.bf-form__field label {
+  font-size: 0.88rem;
+  color: var(--bf-muted);
+  font-weight: 500;
+}
+
+.bf-form__field input,
+.bf-form__field select,
+.bf-form__field textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--bf-border);
+  background: #020617;
+  color: var(--bf-text);
+  font: inherit;
+  line-height: 1.4;
+}
+
+.bf-form__field input:focus,
+.bf-form__field select:focus,
+.bf-form__field textarea:focus {
+  outline: 2px solid rgba(52, 211, 153, 0.45);
+  outline-offset: 1px;
+  border-color: rgba(52, 211, 153, 0.55);
+}
+
+.bf-form__field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.bf-form__field select {
+  cursor: pointer;
+}
+
+.bf-form .bf-cta {
+  margin-top: 0.25rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.bf-form .bf-cta:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+.bf-form__success {
+  margin-top: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(6, 78, 59, 0.35);
+  color: var(--bf-emerald-hot);
+  font-size: 0.92rem;
+}
+
+.bf-note a {
+  text-decoration: none;
+}
+
+.bf-note a:hover {
+  text-decoration: underline;
 }
 
 .bf-footer {
