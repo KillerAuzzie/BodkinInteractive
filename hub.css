@@ -90,6 +90,13 @@ body.hub {
   object-fit: contain;
 }
 
+.hub-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.15rem;
+  align-items: center;
+}
+
 .hub-nav a {
   color: var(--hub-muted);
   text-decoration: none;
@@ -100,6 +107,33 @@ body.hub {
 
 .hub-nav a:hover,
 .hub-nav a:focus-visible {
+  color: var(--hub-fog);
+}
+
+.hub-footer {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: center;
+  color: var(--hub-muted);
+  font-size: 0.85rem;
+}
+
+.hub-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.hub-footer__links a {
+  color: var(--hub-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.hub-footer__links a:hover {
   color: var(--hub-fog);
 }
 
@@ -284,15 +318,6 @@ body.hub {
 
 .hub-path--fit .hub-path__cta {
   color: var(--hub-fit);
-}
-
-.hub-footer {
-  position: relative;
-  z-index: 1;
-  padding: 1rem 1.5rem 1.5rem;
-  text-align: center;
-  color: var(--hub-muted);
-  font-size: 0.85rem;
 }
 
 @media (max-width: 600px) {

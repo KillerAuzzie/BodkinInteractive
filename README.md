@@ -25,11 +25,13 @@ This repository contains the source for [bodkininteractive.com](https://bodkinin
 
 ### Structure
 
-- **`index.html`** / **`hub.css`**: Studio host page (links to both products)
-- **`fields-of-renown.html`**: Game site (previous homepage content)
-- **`boddyfit.html`** / **`boddyfit.css`**: BoddyFit marketing landing
-- **`privacy.html`**, **`terms.html`**, **`legal.html`**: BoddyFit legal docs
-- **`contact.html`**: Contact form
-- **`style.css`** / **`script.js`**: Shared styles and scripts for the game pages
+Pretty URLs on GitHub Pages use folders with `index.html` (e.g. `/boddyfit/`). Root `*.html` stubs redirect old links.
+
+- **`index.html`** / **`hub.css`**: Studio hub
+- **`fields-of-renown/`**: Game marketing site
+- **`boddyfit/`** (+ root `boddyfit.css` / `boddyfit.js`): BoddyFit landing
+- **`privacy/`**, **`terms/`**, **`legal/`**: BoddyFit legal docs
+- **`contact/`**: Contact form
+- **`style.css`** / **`script.js`**: Shared styles and scripts
 - **`Assets/`**: Images and media
 - **`robots.txt`** / **`sitemap.xml`** / **`404.html`**: SEO and error handling

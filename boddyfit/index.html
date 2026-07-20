@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoddyFit — Run + Gym Coach for Android | Bodkin Interactive</title>
+  <meta name="description" content="BoddyFit is an Android run + gym coach: multi-week plans, structured sessions, exercise + running libraries, Health Connect sync, and race estimates — offline-first on your phone." />
+  <meta name="author" content="Bodkin Interactive" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bodkininteractive.com/boddyfit" />
+  <meta property="og:title" content="BoddyFit — Run + Gym Coach for Android" />
+  <meta property="og:description" content="Personalized run and strength plans on your phone — offline-first, with Health Connect sync, race estimates, and coaching libraries." />
+  <meta property="og:site_name" content="Bodkin Interactive" />
+
+  <link rel="icon" type="image/png" href="../Assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../boddyfit.css" />
+  <style>
+    body.bf { --bf-font: "DM Sans", system-ui, sans-serif; --bf-mono: "IBM Plex Mono", ui-monospace, monospace; }
+  </style>
+</head>
+<body class="bf">
+  <a class="bf-skip" href="#main">Skip to content</a>
+
+  <header class="bf-top">
+    <div class="bf-top__inner">
+      <a class="bf-logo" href="../boddyfit/" aria-current="page">
+        BoddyFit
+        <span class="bf-logo__tag">Run + Gym Coach</span>
+      </a>
+      <nav aria-label="BoddyFit">
+        <a href="#screens">Screens</a>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#sync">Sync</a>
+        <a href="#get">Get the app</a>
+        <a href="../">Studio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="bf-hero" aria-labelledby="bf-brand">
+      <div class="bf-hero__bg" aria-hidden="true"></div>
+      <div class="bf-hero__stage">
+        <div class="bf-hero__inner">
+          <p id="bf-brand" class="bf-hero__brand">BoddyFit</p>
+          <p class="bf-hero__tagline">Run + Gym Coach · Android</p>
+          <p class="bf-hero__line">
+            A full coaching app on your phone: multi-week plans, day-by-day sessions, strength and mobility,
+            libraries, activity insights, and optional watch sync via Health Connect — offline-first.
+          </p>
+          <div class="bf-cta-row">
+            <a class="bf-cta" href="#get">Get BoddyFit for Android</a>
+            <a class="bf-cta bf-cta--ghost" href="#screens">See the app</a>
+          </div>
+          <p class="bf-note">Android · Capacitor · by Bodkin Interactive</p>
+        </div>
+        <figure class="bf-phone bf-phone--hero">
+          <img
+            src="../Assets/img/boddyfit/today-home-v3.jpg"
+            alt="BoddyFit Today screen showing 5K plan progress and Easy Run session"
+            width="540"
+            height="1117"
+            loading="eager"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="bf-section bf-section--wide" id="screens" aria-labelledby="screens-title">
+      <div class="bf-section__inner">
+        <h2 id="screens-title">Inside the app</h2>
+        <p class="lead">Real screens from the Android build — Today through libraries, stats, and sync-ready activity.</p>
+        <p class="bf-screens-hint">Tap a screen to enlarge · Swipe to browse →</p>
+
+        <div class="bf-screens" role="list">
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Today screen">
+              <img src="../Assets/img/boddyfit/today-home-v3.jpg" alt="Today home with plan progress and Easy Run" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Today</strong> Plan progress, swipe days, open today’s session</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Structured runs screen">
+              <img src="../Assets/img/boddyfit/session-hills-v3.jpg" alt="Structured hill session with paced segments" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Structured runs</strong> Segments with pace, effort, and coaching cues</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Strength screen">
+              <img src="../Assets/img/boddyfit/strength-circuit-v3.jpg" alt="Runner Strength day with circuit and how-to links" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Strength</strong> Circuits, sets, rest, and how-to links</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Mobility screen">
+              <img src="../Assets/img/boddyfit/mobility-v3.jpg" alt="Mobility session Ankle and shin reset with timed holds" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Mobility</strong> Timed holds and form-focused resets</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Calendar screen">
+              <img src="../Assets/img/boddyfit/calendar-plan-v2.jpg" alt="Calendar week showing run, strength, and mobility sessions" width="540" height="1136" loading="lazy" />
+            </button>
+            <figcaption><strong>Calendar</strong> Dual coach weeks — run, strength, mobility</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Manage plan screen">
+              <img src="../Assets/img/boddyfit/manage-plan-v2.jpg" alt="Manage plan settings for days volume and plan length" width="540" height="1136" loading="lazy" />
+            </button>
+            <figcaption><strong>Manage plan</strong> Tune days, volume, and plan length</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Activity screen">
+              <img src="../Assets/img/boddyfit/activities-v3.jpg" alt="Activities list with Garmin Connect tags and link to plan" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Activity</strong> Imports you can link to planned sessions</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Activity detail screen">
+              <img src="../Assets/img/boddyfit/activity-metrics-v3.jpg" alt="Activity detail metrics including pace HR steps calories" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Activity detail</strong> Pace, HR, steps, calories when available</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Stats screen">
+              <img src="../Assets/img/boddyfit/stats-v3.jpg" alt="Stats screen with weekly distance chart and activity summary totals" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Stats</strong> Weekly distance, totals, and race estimates</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Exercise library screen">
+              <img src="../Assets/img/boddyfit/exercise-library-v3.jpg" alt="Exercise library with 118 exercises and muscle filters" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Exercise library</strong> 100+ moves by muscle group</figcaption>
+          </figure>
+          <figure class="bf-phone" role="listitem">
+            <button type="button" class="bf-phone__zoom" aria-label="Enlarge Running library screen">
+              <img src="../Assets/img/boddyfit/running-library-v3.jpg" alt="Running library pacing strategy video lesson" width="540" height="1117" loading="lazy" />
+            </button>
+            <figcaption><strong>Running library</strong> Guides for pacing and execution</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="bf-section" id="how" aria-labelledby="how-title">
+      <div class="bf-section__inner">
+        <h2 id="how-title">How it works</h2>
+        <p class="lead">Build a plan once. Train every day. Review and sync when you want.</p>
+        <div class="bf-steps">
+          <div class="bf-step">
+            <div>
+              <h3>Onboard</h3>
+              <p>Choose a goal — 5K, 10K, Half, Marathon, or general fitness — plus equipment and schedule.</p>
+            </div>
+          </div>
+          <div class="bf-step">
+            <div>
+              <h3>Plan</h3>
+              <p>Get a multi-week calendar (up to 52 weeks) with runs, strength, and mobility on one schedule.</p>
+            </div>
+          </div>
+          <div class="bf-step">
+            <div>
+              <h3>Today</h3>
+              <p>Swipe days, track week progress, open structured sessions — not just “run X km.”</p>
+            </div>
+          </div>
+          <div class="bf-step">
+            <div>
+              <h3>Review &amp; sync</h3>
+              <p>Log activity, see summaries and race estimates, optionally import watch data via Health Connect.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bf-section bf-section--wide" id="features" aria-labelledby="features-title">
+      <div class="bf-section__inner">
+        <h2 id="features-title">Built for a full training week</h2>
+        <p class="lead">Practical coaching on device — beginner to advanced. No cloud coaching account required.</p>
+        <div class="bf-features">
+          <article class="bf-feature">
+            <h3>Dual coach calendar</h3>
+            <p>Runs, strength, and mobility across a long plan — swipe weeks, open any session, track percent complete.</p>
+          </article>
+          <article class="bf-feature">
+            <h3>Structured sessions</h3>
+            <p>Hill repeats, easy runs, circuits, and mobility with pace, RPE, rest, and how-to cues.</p>
+          </article>
+          <article class="bf-feature">
+            <h3>Two libraries</h3>
+            <p>Exercise library by muscle group, plus a running library for pacing and execution guides.</p>
+          </article>
+          <article class="bf-feature">
+            <h3>Stats &amp; estimates</h3>
+            <p>Weekly distance charts, all-time totals, and race estimates from your baseline pace.</p>
+          </article>
+          <article class="bf-feature">
+            <h3>Weekly FIT export</h3>
+            <p>Use the week button on Calendar to download that week’s runs for your watch workflow.</p>
+          </article>
+          <article class="bf-feature">
+            <h3>Health Connect sync</h3>
+            <p>Import activities, view metrics when available, and link them to planned sessions.</p>
+          </article>
+        </div>
+        <div class="bf-goals" aria-label="Training goals">
+          <span class="bf-goal">5K</span>
+          <span class="bf-goal">10K</span>
+          <span class="bf-goal">Half</span>
+          <span class="bf-goal">Marathon</span>
+          <span class="bf-goal">General fitness</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="bf-section" id="sync" aria-labelledby="sync-title">
+      <div class="bf-section__inner">
+        <h2 id="sync-title">Sync &amp; Garmin — the honest story</h2>
+        <p class="lead">Watch data can reach BoddyFit. Maps and Garmin cloud downloads cannot.</p>
+
+        <div class="bf-flow" role="note">Watch → Garmin Connect → Health Connect → BoddyFit</div>
+
+        <aside class="bf-warn" aria-label="Garmin disclaimer">
+          <h3>Garmin Connect disclaimer</h3>
+          <p>
+            BoddyFit does <strong>not</strong> connect directly to Garmin Connect and cannot download GPS maps or activity files from Garmin’s cloud.
+          </p>
+          <p>
+            Watch activities reach BoddyFit only through <strong>Android Health Connect</strong>: Garmin Connect writes what it chooses to share; BoddyFit reads that data on your phone. Distance, time, heart rate, and pace samples may appear; GPS route maps are not shown.
+          </p>
+          <p>
+            Calendar can export weekly run files (FIT) for your own watch workflow — separate from Health Connect imports.
+          </p>
+          <p>
+            See the <a href="../privacy/">Privacy policy</a> for details.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="bf-section" id="get" aria-labelledby="get-title">
+      <div class="bf-section__inner">
+        <h2 id="get-title">Get BoddyFit</h2>
+        <p class="lead">Android app from Bodkin Interactive — coaching that stays on your device.</p>
+        <div class="bf-cta-row">
+          <a class="bf-cta" href="../contact/">Request Android access</a>
+          <a class="bf-cta bf-cta--ghost" href="../support/">Support</a>
+        </div>
+        <p class="bf-note">
+          Sideload / direct Android build via Bodkin Interactive. Play Store listing can follow — contact us if you want early access.
+        </p>
+        <div class="bf-doc-card" style="margin-top: 1.5rem;">
+          <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">Policies for Play Store &amp; the app</h3>
+          <p class="lead" style="margin-bottom: 0.75rem;">Stable HTTPS links for Google Play Console and in-app Settings.</p>
+          <ul class="bf-link-list">
+            <li>
+              <span>Privacy policy</span>
+              <a href="https://bodkininteractive.com/privacy/">https://bodkininteractive.com/privacy/</a>
+            </li>
+            <li>
+              <span>Terms of use</span>
+              <a href="https://bodkininteractive.com/terms/">https://bodkininteractive.com/terms/</a>
+            </li>
+            <li>
+              <span>Copyright / legal</span>
+              <a href="https://bodkininteractive.com/legal/">https://bodkininteractive.com/legal/</a>
+            </li>
+            <li>
+              <span>Support</span>
+              <a href="https://bodkininteractive.com/support/">https://bodkininteractive.com/support/</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bf-footer">
+    <div class="bf-footer__inner">
+      <div class="bf-footer__links">
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../legal/">Copyright</a>
+        <a href="../support/">Support</a>
+        <a href="../">Bodkin Interactive</a>
+        <a href="../contact/">Contact</a>
+        <a href="../fields-of-renown/">Fields of Renown</a>
+      </div>
+      <p>© 2026 Bodkin Interactive. All rights reserved.</p>
+      <p>Garmin, Garmin Connect, Google, Android, and Health Connect are trademarks of their respective owners. BoddyFit is not affiliated with, endorsed by, or sponsored by Garmin Ltd. or Google LLC.</p>
+    </div>
+  </footer>
+
+  <div class="bf-lightbox" id="bf-lightbox" hidden>
+    <div class="bf-lightbox__backdrop" data-bf-lightbox-close tabindex="-1"></div>
+    <div class="bf-lightbox__panel" role="dialog" aria-modal="true" aria-labelledby="bf-lightbox-caption">
+      <button type="button" class="bf-lightbox__close" data-bf-lightbox-close aria-label="Close enlarged screen">×</button>
+      <button type="button" class="bf-lightbox__nav bf-lightbox__nav--prev" data-bf-lightbox-prev aria-label="Previous screen">‹</button>
+      <img class="bf-lightbox__img" id="bf-lightbox-img" alt="" />
+      <button type="button" class="bf-lightbox__nav bf-lightbox__nav--next" data-bf-lightbox-next aria-label="Next screen">›</button>
+      <p class="bf-lightbox__caption" id="bf-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="../boddyfit.js" defer></script>
+</body>
+</html>
