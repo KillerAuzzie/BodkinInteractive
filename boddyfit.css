@@ -760,93 +760,134 @@ body.bf-lightbox-open {
   background: var(--bf-surface);
 }
 
-.bf-contact-card {
-  max-width: 560px;
+/* Contact page — same layout pattern as the previous form card */
+.bf-contact {
+  padding: 2.5rem 1.25rem 3.5rem;
+  text-align: center;
 }
 
-.bf-contact-alt {
-  margin-bottom: 1.25rem !important;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--bf-border);
+.bf-contact__inner {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.bf-form__title {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
+.bf-contact h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 0.75rem;
   color: var(--bf-text);
 }
 
-.bf-form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
-}
-
-.bf-form__field label {
-  font-size: 0.88rem;
+.bf-contact__lede,
+.bf-contact__alt {
+  max-width: 36rem;
+  margin: 0 auto 0.75rem;
   color: var(--bf-muted);
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
-.bf-form__field input,
-.bf-form__field select,
-.bf-form__field textarea {
-  width: 100%;
-  padding: 0.7rem 0.85rem;
-  border-radius: 10px;
+.bf-contact__alt {
+  margin-bottom: 1.75rem;
+}
+
+.bf-contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  background: var(--bf-surface);
   border: 1px solid var(--bf-border);
-  background: #020617;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.bf-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.bf-form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--bf-text);
+}
+
+.bf-form-input,
+.bf-form-textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: rgba(2, 6, 23, 0.85);
+  border: 2px solid rgba(148, 163, 184, 0.22);
+  border-radius: 10px;
   color: var(--bf-text);
   font: inherit;
+  font-size: 1rem;
   line-height: 1.4;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.bf-form__field input:focus,
-.bf-form__field select:focus,
-.bf-form__field textarea:focus {
-  outline: 2px solid rgba(52, 211, 153, 0.45);
-  outline-offset: 1px;
-  border-color: rgba(52, 211, 153, 0.55);
+.bf-form-input:focus,
+.bf-form-textarea:focus {
+  outline: none;
+  border-color: var(--bf-emerald);
+  background: rgba(2, 6, 23, 0.95);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
 }
 
-.bf-form__field textarea {
+.bf-form-textarea {
+  height: 120px;
+  min-height: 80px;
   resize: vertical;
-  min-height: 8rem;
 }
 
-.bf-form__field select {
-  cursor: pointer;
-}
-
-.bf-form .bf-cta {
-  margin-top: 0.25rem;
-  cursor: pointer;
+.bf-form-submit {
+  display: block;
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--bf-emerald-btn);
+  color: #fff;
   font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.bf-form .bf-cta:disabled {
+.bf-form-submit:hover {
+  background: var(--bf-emerald);
+  transform: translateY(-1px);
+}
+
+.bf-form-submit:active {
+  transform: translateY(0);
+}
+
+.bf-form-submit:disabled {
   opacity: 0.65;
   cursor: wait;
   transform: none;
 }
 
-.bf-form__success {
-  margin-top: 1rem;
-  padding: 0.75rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  background: rgba(6, 78, 59, 0.35);
-  color: var(--bf-emerald-hot);
+.bf-form-success {
+  margin-top: 0.9rem;
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+  font-weight: 500;
   font-size: 0.92rem;
+  color: var(--bf-emerald-hot);
+  background: rgba(6, 78, 59, 0.35);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 10px;
 }
 
-.bf-note a {
-  text-decoration: none;
-}
-
-.bf-note a:hover {
-  text-decoration: underline;
+.bf-form-success[hidden] {
+  display: none !important;
 }
 
 .bf-footer {
