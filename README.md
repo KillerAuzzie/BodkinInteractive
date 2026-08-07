@@ -28,6 +28,7 @@ This repository contains the source for [bodkininteractive.com](https://bodkinin
 Pretty URLs on GitHub Pages use folders with `index.html` (e.g. `/boddyfit/`). Root `*.html` stubs redirect old links.
 
 - **`index.html`** / **`hub.css`**: Studio hub
+- **`bims/`** (+ root `bims.css`): BIMS collaborative mind-map marketing (app at bims.bodkininteractive.com)
 - **`fields-of-renown/`**: Game marketing site
 - **`boddyfit/`** (+ root `boddyfit.css` / `boddyfit.js`): BoddyFit landing
 - **`privacy/`**, **`terms/`**, **`legal/`**: BoddyFit legal docs

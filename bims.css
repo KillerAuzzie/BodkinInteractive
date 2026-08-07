@@ -1,0 +1,426 @@
+/* BIMS marketing — collaborative mind maps */
+
+:root {
+  --bims-bg: #020617;
+  --bims-surface: #0f172a;
+  --bims-border: #1e293b;
+  --bims-text: #f1f5f9;
+  --bims-muted: #94a3b8;
+  --bims-emerald: #10b981;
+  --bims-emerald-hot: #34d399;
+  --bims-cyan: #22d3ee;
+  --bims-btn: #059669;
+  --bims-font: "DM Sans", system-ui, sans-serif;
+  --bims-display: "Syne", system-ui, sans-serif;
+  --bims-max: 720px;
+  --bims-wide: 960px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.bims {
+  min-height: 100vh;
+  background: var(--bims-bg);
+  color: var(--bims-text);
+  font-family: var(--bims-font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bims a {
+  color: var(--bims-emerald-hot);
+}
+
+.bims a:hover {
+  text-decoration: underline;
+}
+
+.bims-skip {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 50;
+  padding: 0.5rem 0.75rem;
+  background: var(--bims-emerald);
+  color: #022c22;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.bims-skip:focus {
+  top: 1rem;
+}
+
+.bims-top {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--bims-border);
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.bims-top__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bims-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--bims-emerald-hot);
+  font-family: var(--bims-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.bims-logo:hover {
+  text-decoration: none;
+}
+
+.bims-logo__tag {
+  color: var(--bims-muted);
+  font-family: var(--bims-font);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.bims-top nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.bims-top nav a {
+  color: var(--bims-muted);
+  text-decoration: none;
+}
+
+.bims-top nav a:hover,
+.bims-top nav a[aria-current="page"] {
+  color: var(--bims-emerald-hot);
+}
+
+.bims-hero {
+  position: relative;
+  min-height: min(88vh, 760px);
+  display: flex;
+  align-items: center;
+  padding: 3rem 1.25rem 3.5rem;
+  overflow: hidden;
+}
+
+.bims-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(16, 185, 129, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 15%, rgba(34, 211, 238, 0.12), transparent 50%),
+    linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  animation: bims-pulse 12s ease-in-out infinite alternate;
+}
+
+.bims-hero__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 40% 40%, #000 20%, transparent 75%);
+}
+
+@keyframes bims-pulse {
+  from { filter: saturate(1); }
+  to { filter: saturate(1.12) brightness(1.04); }
+}
+
+.bims-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--bims-wide);
+  margin: 0 auto;
+  animation: bims-rise 0.9s ease-out both;
+}
+
+@keyframes bims-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bims-hero__brand {
+  font-family: var(--bims-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--bims-emerald-hot);
+  margin-bottom: 0.35rem;
+}
+
+.bims-hero__tagline {
+  color: var(--bims-cyan);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.1rem;
+}
+
+.bims-hero h1 {
+  max-width: 18ch;
+  font-size: clamp(1.45rem, 3.2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.bims-hero__lede {
+  max-width: 38rem;
+  color: var(--bims-muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.bims-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.bims-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border-radius: 10px;
+  background: var(--bims-btn);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bims-cta:hover {
+  background: var(--bims-emerald);
+  transform: translateY(-1px);
+}
+
+.bims-cta--ghost {
+  background: transparent;
+  border: 1px solid var(--bims-border);
+  color: var(--bims-text) !important;
+}
+
+.bims-cta--ghost:hover {
+  border-color: rgba(52, 211, 153, 0.45);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.bims-note {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--bims-muted);
+}
+
+.bims-note a {
+  text-decoration: none;
+}
+
+.bims-note a:hover {
+  text-decoration: underline;
+}
+
+.bims-section {
+  padding: 3.5rem 1.25rem;
+  border-top: 1px solid var(--bims-border);
+}
+
+.bims-section__inner {
+  max-width: var(--bims-wide);
+  margin: 0 auto;
+}
+
+.bims-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.bims-section .lead {
+  color: var(--bims-muted);
+  margin-bottom: 1.75rem;
+  max-width: 40rem;
+}
+
+.bims-pillars {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 720px) {
+  .bims-pillars {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.bims-pillars li {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--bims-border);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.bims-pillars strong {
+  color: var(--bims-emerald-hot);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.bims-pillars span {
+  color: var(--bims-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.bims-steps {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  counter-reset: step;
+}
+
+@media (min-width: 720px) {
+  .bims-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bims-steps li {
+  position: relative;
+  padding: 1.1rem 1.1rem 1.1rem 3rem;
+  border: 1px solid var(--bims-border);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.45);
+  counter-increment: step;
+}
+
+.bims-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 1rem;
+  top: 1.15rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.18);
+  color: var(--bims-emerald-hot);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.bims-steps h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.bims-steps p {
+  color: var(--bims-muted);
+  font-size: 0.9rem;
+}
+
+.bims-footer {
+  border-top: 1px solid var(--bims-border);
+  padding: 1.75rem 1.25rem 2.25rem;
+}
+
+.bims-footer__inner {
+  max-width: var(--bims-wide);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--bims-muted);
+  text-align: center;
+}
+
+.bims-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.1rem;
+}
+
+.bims-footer__links a {
+  color: var(--bims-muted);
+  text-decoration: none;
+}
+
+.bims-footer__links a:hover {
+  color: var(--bims-emerald-hot);
+}
+
+@media (max-width: 600px) {
+  .bims-top__inner {
+    padding: 0 1rem;
+    min-height: 60px;
+  }
+
+  .bims-logo {
+    font-size: 1.15rem;
+  }
+
+  .bims-logo__tag {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bims-hero__bg,
+  .bims-hero__inner,
+  .bims-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+}

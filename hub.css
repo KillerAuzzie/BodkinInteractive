@@ -9,6 +9,8 @@
   --hub-game-soft: rgba(196, 92, 38, 0.18);
   --hub-fit: #10b981;
   --hub-fit-soft: rgba(16, 185, 129, 0.14);
+  --hub-bims: #22d3ee;
+  --hub-bims-soft: rgba(34, 211, 238, 0.14);
   --hub-font: "DM Sans", system-ui, sans-serif;
   --hub-display: "Syne", system-ui, sans-serif;
   --hub-medieval: "Cinzel", Georgia, serif;
@@ -153,8 +155,9 @@ body.hub {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(196, 92, 38, 0.24), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 82% 55%, rgba(16, 185, 129, 0.18), transparent 50%),
+    radial-gradient(ellipse 55% 45% at 12% 40%, rgba(196, 92, 38, 0.22), transparent 55%),
+    radial-gradient(ellipse 45% 40% at 55% 70%, rgba(16, 185, 129, 0.14), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 90% 35%, rgba(34, 211, 238, 0.12), transparent 50%),
     linear-gradient(180deg, #1c1917 0%, var(--hub-ink) 55%, #020617 100%);
   animation: hub-glow 12s ease-in-out infinite alternate;
 }
@@ -241,6 +244,12 @@ body.hub {
   }
 }
 
+@media (min-width: 1100px) {
+  .hub-paths {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 .hub-path {
   display: flex;
   flex-direction: column;
@@ -293,6 +302,19 @@ body.hub {
     0 22px 48px rgba(16, 185, 129, 0.14);
 }
 
+.hub-path--bims {
+  box-shadow: inset 0 1px 0 rgba(34, 211, 238, 0.08);
+}
+
+.hub-path--bims:hover,
+.hub-path--bims:focus-visible {
+  border-color: rgba(34, 211, 238, 0.5);
+  background: rgba(8, 20, 28, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(34, 211, 238, 0.12),
+    0 22px 48px rgba(34, 211, 238, 0.12);
+}
+
 .hub-path__kicker {
   font-size: 0.72rem;
   font-weight: 600;
@@ -309,6 +331,10 @@ body.hub {
   color: rgba(52, 211, 153, 0.8);
 }
 
+.hub-path--bims .hub-path__kicker {
+  color: rgba(34, 211, 238, 0.85);
+}
+
 .hub-path--game .hub-path__name {
   font-family: var(--hub-medieval);
   font-size: 1.5rem;
@@ -321,6 +347,14 @@ body.hub {
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   color: #34d399;
+}
+
+.hub-path--bims .hub-path__name {
+  font-family: var(--hub-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: #22d3ee;
 }
 
 .hub-path__desc {
@@ -357,6 +391,10 @@ body.hub {
 
 .hub-path--fit .hub-path__cta {
   color: var(--hub-fit);
+}
+
+.hub-path--bims .hub-path__cta {
+  color: var(--hub-bims);
 }
 
 /* Connect — below the fold, one job */
