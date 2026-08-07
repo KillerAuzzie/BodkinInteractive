@@ -401,6 +401,120 @@ body.bims {
   color: var(--bims-emerald-hot);
 }
 
+/* Legal docs */
+.bims-legal {
+  max-width: var(--bims-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3.5rem;
+}
+
+.bims-legal h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.bims-legal .meta {
+  color: var(--bims-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.bims-url-line {
+  font-size: 0.8rem;
+  color: var(--bims-muted);
+  margin-bottom: 1.5rem;
+  word-break: break-all;
+}
+
+.bims-url-line a {
+  color: var(--bims-emerald-hot);
+}
+
+.bims-doc-card {
+  margin-bottom: 1rem;
+  padding: 1.15rem;
+  border: 1px solid var(--bims-border);
+  border-radius: 12px;
+  background: var(--bims-surface);
+}
+
+.bims-legal section {
+  margin-bottom: 1.35rem;
+}
+
+.bims-legal h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.bims-legal p,
+.bims-legal li {
+  color: var(--bims-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.bims-legal ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bims-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.bims-faq__item {
+  border: 1px solid var(--bims-border);
+  border-radius: 10px;
+  background: rgba(2, 6, 23, 0.45);
+  overflow: hidden;
+}
+
+.bims-faq__item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--bims-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.bims-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.bims-faq__item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--bims-emerald-hot);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.bims-faq__item[open] summary::after {
+  content: "–";
+}
+
+.bims-faq__item summary:hover {
+  color: var(--bims-emerald-hot);
+}
+
+.bims-faq__item p {
+  margin: 0;
+  padding: 0 1rem 0.95rem;
+  color: var(--bims-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 600px) {
   .bims-top__inner {
     padding: 0 1rem;
