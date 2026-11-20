@@ -1,0 +1,43 @@
+# Jekyll config for bodkininteractive.com (built by GitHub Pages on push to main).
+# Hand-written pages are copied as-is. Dev log posts are Markdown files in _posts/.
+# See WRITING-POSTS.md for how to write one.
+
+title: Bodkin Interactive
+description: Indie studio behind Fields of Renown, BoddyFit, and BIMS.
+url: https://bodkininteractive.com
+baseurl: ""
+lang: en
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+# Every post lives at /devlog/<slug>/
+permalink: /devlog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+
+feed:
+  path: devlog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Bodkin Interactive
+
+exclude:
+  - README.md
+  - WRITING-POSTS.md
+  - new-post.sh
+  - preview.sh
+  - todo
+  - testing
+  - _site

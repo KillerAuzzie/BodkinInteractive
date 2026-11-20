@@ -1,0 +1,40 @@
+{%- comment -%}
+  <head> contents shared by the dev log pages. Reads title, description and cover/image
+  from the page's front matter, falling back to the site defaults.
+{%- endcomment -%}
+{%- assign head_title = page.title | default: site.title -%}
+{%- if page.title -%}{%- assign head_title = page.title | append: " | Fields of Renown Dev Log" -%}{%- endif -%}
+{%- assign head_desc = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- assign head_image = page.cover | default: page.image | default: "/Assets/img/newlogo.png" -%}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{ head_title }}</title>
+<meta name="description" content="{{ head_desc | escape }}" />
+<meta name="author" content="{{ page.author | default: 'Bodkin Interactive' }}" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}" />
+<meta property="og:description" content="{{ head_desc | escape }}" />
+<meta property="og:image" content="{{ head_image | absolute_url }}" />
+<meta property="og:site_name" content="Bodkin Interactive" />
+{%- if page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+{%- endif %}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}" />
+<meta name="twitter:description" content="{{ head_desc | escape }}" />
+<meta name="twitter:image" content="{{ head_image | absolute_url }}" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="/Assets/img/logo.png" />
+<link rel="apple-touch-icon" href="/Assets/img/logo.png" />
+<link rel="alternate" type="application/atom+xml" title="Fields of Renown Dev Log" href="/devlog/feed.xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/fields-of-renown.css" />

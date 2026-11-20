@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://bodkininteractive.github.io/sitemap.xml
+Sitemap: https://bodkininteractive.com/sitemap.xml

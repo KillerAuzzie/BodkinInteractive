@@ -1,0 +1,30 @@
+{%- comment -%}
+  Fields of Renown site header. On the game page itself pass on_page=true so the
+  section links stay as #anchors (script.js highlights them while scrolling).
+{%- endcomment -%}
+{%- if include.on_page -%}{%- assign for_base = "" -%}{%- else -%}{%- assign for_base = "/fields-of-renown/" -%}{%- endif -%}
+<header class="for-header" role="banner">
+  <div class="for-header__inner">
+    <a href="/" class="for-brand" aria-label="Bodkin Interactive studio home">
+      <img src="/Assets/img/newlogo.png" alt="" class="for-brand__logo" height="75" />
+      <span>Bodkin Interactive</span>
+    </a>
+
+    <button class="for-hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      ☰
+    </button>
+
+    <nav class="for-nav" id="nav-menu" role="navigation" aria-label="Fields of Renown">
+      <ul role="menubar">
+        <li role="none"><a href="/" role="menuitem">Studio</a></li>
+        <li role="none"><a href="{{ for_base }}#home" role="menuitem"{% if include.on_page %} aria-current="page"{% endif %}>Fields of Renown</a></li>
+        <li role="none"><a href="{{ for_base }}#opening" role="menuitem">The Opening</a></li>
+        <li role="none"><a href="{{ for_base }}#pillars" role="menuitem">Gameplay</a></li>
+        <li role="none"><a href="{{ for_base }}#roadmap" role="menuitem">Development</a></li>
+        <li role="none"><a href="{{ for_base }}#latest-news" role="menuitem">Watch</a></li>
+        <li role="none"><a href="/devlog/" role="menuitem"{% if include.devlog %} aria-current="page"{% endif %}>Dev log</a></li>
+        <li role="none"><a href="{{ for_base }}#supporters" role="menuitem">Community</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

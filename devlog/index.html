@@ -1,0 +1,90 @@
+---
+title: Dev log
+description: "Notes from the build of Fields of Renown: systems, art, playtests, and decisions from Bodkin Interactive."
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include for-head.html %}
+</head>
+<body class="for for-devlog">
+  <a class="for-skip" href="#main-content">Skip to content</a>
+  {% include for-header.html devlog=true %}
+
+  <main id="main-content" role="main">
+    <header class="post-hero post-hero--index">
+      <div class="post-hero__inner">
+        <p class="for-eyebrow">Fields of Renown</p>
+        <h1>Dev log</h1>
+        <p class="post-hero__subtitle">Notes from the build: systems, storms, swords, and the decisions behind them.</p>
+        <div class="for-cta-row">
+          <a href="https://discord.gg/sqXW4r2nw9" class="for-cta for-cta--discord" target="_blank" rel="noopener">Join our Discord</a>
+          <a href="/devlog/feed.xml" class="for-cta for-cta--ghost">Subscribe (RSS)</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="for-section for-section--wide" aria-label="All posts">
+      <div class="for-section__inner">
+        {%- assign all_tags = "" | split: "" -%}
+        {%- for p in site.posts -%}{%- assign all_tags = all_tags | concat: p.tags -%}{%- endfor -%}
+        {%- assign all_tags = all_tags | uniq | sort_natural -%}
+        {%- if all_tags.size > 1 %}
+        <div class="for-filter" role="group" aria-label="Filter by tag">
+          <button type="button" class="for-filter__btn" data-tag="" aria-pressed="true">All</button>
+          {%- for t in all_tags %}
+          <button type="button" class="for-filter__btn" data-tag="{{ t | downcase }}" aria-pressed="false">{{ t }}</button>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+
+        {%- if site.posts.size > 0 %}
+        <ul class="for-log-grid" id="post-list">
+          {%- for p in site.posts %}
+          {% include post-card.html post=p %}
+          {%- endfor %}
+        </ul>
+        <p class="for-empty" id="post-empty" hidden>No posts with that tag yet.</p>
+        {%- else %}
+        <p class="for-empty">The first post is on its way.</p>
+        {%- endif %}
+      </div>
+    </section>
+  </main>
+
+  {% include for-footer.html %}
+
+  <script>
+    // Tag filter: buttons above the list, also reachable as /devlog/?tag=combat
+    (function () {
+      var buttons = document.querySelectorAll(".for-filter__btn");
+      var cards = document.querySelectorAll("#post-list > li");
+      var empty = document.getElementById("post-empty");
+      if (!buttons.length) return;
+
+      function apply(tag) {
+        var shown = 0;
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.tag === tag)); });
+        cards.forEach(function (c) {
+          var tags = (c.dataset.tags || "").split(",");
+          var match = !tag || tags.indexOf(tag) !== -1;
+          c.hidden = !match;
+          if (match) shown++;
+        });
+        if (empty) empty.hidden = shown > 0;
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          apply(b.dataset.tag);
+          var url = new URL(location.href);
+          if (b.dataset.tag) url.searchParams.set("tag", b.dataset.tag); else url.searchParams.delete("tag");
+          history.replaceState(null, "", url);
+        });
+      });
+
+      apply((new URLSearchParams(location.search).get("tag") || "").toLowerCase());
+    })();
+  </script>
+</body>
+</html>

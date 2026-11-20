@@ -1,0 +1,10 @@
+{%- comment -%}
+  An image with a caption:  {% include figure.html src="/Assets/img/devlog/shot.jpg" alt="What's in it" caption="Optional caption" %}
+  Plain Markdown images  ![alt](/Assets/img/devlog/shot.jpg)  are styled too; use this when you want a caption.
+{%- endcomment -%}
+<figure class="post-figure">
+  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption | escape }}" loading="lazy" />
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>
