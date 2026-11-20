@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include for-head.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "author": { "@type": "Organization", "name": {{ page.author | jsonify }} },
+    "publisher": { "@type": "Organization", "name": "Bodkin Interactive", "url": "https://bodkininteractive.com/" },
+    "image": {{ page.cover | default: "/Assets/img/newlogo.png" | absolute_url | jsonify }},
+    "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+  }
+  </script>
+</head>
+<body class="for for-post">
+  <a class="for-skip" href="#main-content">Skip to content</a>
+  {% include for-header.html %}
+
+  {%- assign words = content | strip_html | number_of_words -%}
+  {%- assign minutes = words | divided_by: 200 | plus: 1 %}
+
+  <main id="main-content" role="main">
+    <header class="post-hero{% if page.cover %} post-hero--cover{% endif %}">
+      {%- if page.cover %}
+      <div class="post-hero__bg" style="background-image: url('{{ page.cover }}');" aria-hidden="true"></div>
+      {%- endif %}
+      <div class="post-hero__inner">
+        <a class="post-hero__back" href="/devlog/">← Dev log</a>
+        <h1>{{ page.title }}</h1>
+        {%- if page.subtitle %}
+        <p class="post-hero__subtitle">{{ page.subtitle }}</p>
+        {%- endif %}
+        <div class="post-hero__meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ minutes }} min read</span>
+          {%- if page.author and page.author != "Bodkin Interactive" %}
+          <span aria-hidden="true">·</span>
+          <span>{{ page.author }}</span>
+          {%- endif %}
+        </div>
+        {%- if page.tags.size > 0 %}
+        <ul class="for-tags" aria-label="Tags">
+          {%- for t in page.tags %}<li><a href="/devlog/?tag={{ t | downcase | uri_escape }}">{{ t }}</a></li>{% endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+    </header>
+
+    <article class="post-body">
+      {{ content }}
+    </article>
+
+    <aside class="post-cta" aria-labelledby="post-cta-title">
+      <h2 id="post-cta-title">Follow the build</h2>
+      <p>New dev log posts, playtest calls, and clips land in the Discord first.</p>
+      <div class="for-cta-row">
+        <a href="https://discord.gg/sqXW4r2nw9" class="for-cta for-cta--discord" target="_blank" rel="noopener">Join our Discord</a>
+        <a href="https://forms.gle/5wNyEZj7Ariuv3ms6" class="for-cta for-cta--ghost" target="_blank" rel="noopener">Get post emails</a>
+        <a href="/devlog/feed.xml" class="for-cta for-cta--ghost">RSS</a>
+      </div>
+    </aside>
+
+    {%- if page.previous or page.next %}
+    <nav class="post-pager" aria-label="More posts">
+      {%- if page.previous %}
+      <a class="post-pager__link" href="{{ page.previous.url }}">
+        <span>← Older</span>
+        <strong>{{ page.previous.title }}</strong>
+      </a>
+      {%- else %}<span></span>{% endif %}
+      {%- if page.next %}
+      <a class="post-pager__link post-pager__link--next" href="{{ page.next.url }}">
+        <span>Newer →</span>
+        <strong>{{ page.next.title }}</strong>
+      </a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </main>
+
+  {% include for-footer.html %}
+</body>
+</html>

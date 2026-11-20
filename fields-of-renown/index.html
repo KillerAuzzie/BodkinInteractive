@@ -1,3 +1,6 @@
+---
+# Front matter so Jekyll fills in the latest dev log posts below.
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,139 +9,175 @@
 
   <title>Fields of Renown | Bodkin Interactive</title>
   <meta name="title" content="Fields of Renown | Bodkin Interactive" />
-  <meta name="description" content="Fields of Renown is a medieval sandbox RPG set in 13th-century Gwynedd, Wales. Fish, farm, trade, and fight — join the Bodkin Interactive community." />
+  <meta name="description" content="Fields of Renown is a medieval RPG set in 13th-century Gwynedd, Wales. It opens with a shipwreck: survive the island, learn to fight, repair the longboat, and sail for the mainland." />
   <meta name="author" content="Bodkin Interactive" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bodkininteractive.com/fields-of-renown/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bodkininteractive.com/fields-of-renown" />
+  <meta property="og:url" content="https://bodkininteractive.com/fields-of-renown/" />
   <meta property="og:title" content="Fields of Renown | Bodkin Interactive" />
-  <meta property="og:description" content="Medieval sandbox RPG set in 13th-century Wales. Join our Discord and watch the game take shape." />
+  <meta property="og:description" content="Shipwrecked off the coast of Gwynedd. Survive the island, earn your way off it, and make your name in 13th-century Wales." />
   <meta property="og:image" content="https://bodkininteractive.com/Assets/img/newlogo.png" />
   <meta property="og:site_name" content="Bodkin Interactive" />
 
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Fields of Renown | Bodkin Interactive" />
-  <meta property="twitter:description" content="Medieval sandbox RPG set in 13th-century Wales." />
-  <meta property="twitter:image" content="https://bodkininteractive.com/Assets/img/newlogo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fields of Renown | Bodkin Interactive" />
+  <meta name="twitter:description" content="Shipwrecked off the coast of Gwynedd. Survive the island, then make your name in medieval Wales." />
+  <meta name="twitter:image" content="https://bodkininteractive.com/Assets/img/newlogo.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="../Assets/img/logo.png" />
-  <link rel="apple-touch-icon" href="../Assets/img/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Assets/img/logo.png" />
+  <link rel="apple-touch-icon" href="/Assets/img/logo.png" />
+  <link rel="alternate" type="application/atom+xml" title="Fields of Renown Dev Log" href="/devlog/feed.xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.youtube.com" />
-  <link rel="preconnect" href="https://discord.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../fields-of-renown.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/fields-of-renown.css" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Fields of Renown",
-    "description": "Medieval sandbox RPG set in 13th-century Gwynedd, Wales.",
+    "url": "https://bodkininteractive.com/fields-of-renown/",
+    "description": "Medieval RPG set in 13th-century Gwynedd, Wales. It opens with a shipwreck and an island to survive and escape.",
     "author": {
       "@type": "Organization",
       "name": "Bodkin Interactive",
       "url": "https://bodkininteractive.com/"
     },
     "gamePlatform": "PC",
-    "genre": ["RPG", "Sandbox", "Survival"]
+    "genre": ["RPG", "Survival", "Action"]
   }
   </script>
 </head>
 <body class="for">
   <a class="for-skip" href="#main-content">Skip to content</a>
-
-  <header class="for-header" role="banner">
-    <div class="for-header__inner">
-      <a href="../" class="for-brand" aria-label="Bodkin Interactive studio home">
-        <img src="../Assets/img/newlogo.png" alt="" class="for-brand__logo" height="75" />
-        <span>Bodkin Interactive</span>
-      </a>
-
-      <button class="for-hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-        ☰
-      </button>
-
-      <nav class="for-nav" id="nav-menu" role="navigation" aria-label="Fields of Renown">
-        <ul role="menubar">
-          <li role="none"><a href="../" role="menuitem">Studio</a></li>
-          <li role="none"><a href="#home" role="menuitem" aria-current="page">Fields of Renown</a></li>
-          <li role="none"><a href="#about" role="menuitem">World</a></li>
-          <li role="none"><a href="#pillars" role="menuitem">Gameplay</a></li>
-          <li role="none"><a href="#roadmap" role="menuitem">Development</a></li>
-          <li role="none"><a href="#latest-news" role="menuitem">Watch</a></li>
-          <li role="none"><a href="#blog-preview" role="menuitem">Dev log</a></li>
-          <li role="none"><a href="#supporters" role="menuitem">Community</a></li>
-          <li role="none"><a href="../contact/" role="menuitem">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include for-header.html on_page=true %}
 
   <main id="main-content" role="main">
     <section class="for-hero" id="home" aria-labelledby="hero-title">
       <div class="for-hero__bg" aria-hidden="true"></div>
+      <div class="for-hero__storm" aria-hidden="true"></div>
       <div class="for-hero__inner">
+        <p class="for-eyebrow">A medieval RPG · 13th-century Gwynedd</p>
         <h1 id="hero-title" class="for-hero__brand">Fields of Renown</h1>
         <p class="for-hero__lede">
-          A medieval sandbox RPG set in 13th-century Gwynedd — survival, craft, trade, and conflict in a land shaped by seasons.
+          The storm takes your ship. The coast of Wales gives you back. Survive the island, learn the sword,
+          earn your passage to the mainland, then make your name in Gwynedd.
         </p>
         <div class="for-cta-row">
-          <a
-            href="https://discord.gg/sqXW4r2nw9"
-            class="for-cta for-cta--discord"
-            target="_blank"
-            rel="noopener"
-          >Join our Discord</a>
-          <a href="#latest-news" class="for-cta for-cta--ghost">Watch development</a>
+          <a href="https://discord.gg/sqXW4r2nw9" class="for-cta for-cta--discord" target="_blank" rel="noopener">Join our Discord</a>
+          <a href="#opening" class="for-cta for-cta--ghost">See how it begins</a>
+          <a href="/devlog/" class="for-cta for-cta--ghost">Read the dev log</a>
         </div>
-        <p class="for-note">In early development · Unreal Engine 5 · by Bodkin Interactive</p>
+        <p class="for-note">In development · Unreal Engine 5 · PC</p>
+      </div>
+    </section>
+
+    <section class="for-section for-section--wide for-section--opening" id="opening" aria-labelledby="opening-title">
+      <div class="for-section__inner">
+        <p class="for-eyebrow">The opening</p>
+        <h2 id="opening-title">Shipwrecked</h2>
+        <p class="lead">
+          Every journey to Gwynedd starts on a small island off its coast. It is the game's first chapter
+          and its training ground. Every system you learn here comes with you to the mainland.
+        </p>
+
+        <ol class="for-acts">
+          <li class="for-act">
+            <span class="for-act__num">I</span>
+            <h3>The storm</h3>
+            <p>
+              A longboat through a night of thunder. Lightning strikes close, the sea takes the rest,
+              and you wake face-down on a strange shore with nothing.
+            </p>
+          </li>
+          <li class="for-act">
+            <span class="for-act__num">II</span>
+            <h3>Survive the days</h3>
+            <p>
+              Fish the shallows, keep warm by the fire, sleep through the dark, pray for a blessing.
+              Earn coin and spend it at the island's store on torches and timber.
+            </p>
+          </li>
+          <li class="for-act">
+            <span class="for-act__num">III</span>
+            <h3>Learn the blade</h3>
+            <p>
+              Directional sword fighting and the bow, against the island's wolves. Read the attack,
+              pick your angle, mind your stamina.
+            </p>
+          </li>
+          <li class="for-act">
+            <span class="for-act__num">IV</span>
+            <h3>Escape day</h3>
+            <p>
+              On the tenth day a wrecked longboat washes ashore, and the bandits come with it.
+              Hold them off, repair the hull, and row out through the storm toward Gwynedd.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <section class="for-section for-section--world" id="about" aria-labelledby="about-title">
       <div class="for-section__inner">
+        <p class="for-eyebrow">Beyond the island</p>
         <h2 id="about-title">The world</h2>
         <p class="lead">North Wales, thirteenth century. Opportunity and danger share the same road.</p>
         <p>
-          As a lone wanderer or a rising merchant, you fish, farm, trade, and fight to carve out your place.
-          Seasons shift the land. Markets move. Alliances form and break. Build renown on your terms —
-          landowner, warrior, explorer, or something in between.
+          The island teaches you to survive. Gwynedd asks what you will do with it. Fish, farm, trade, and fight
+          to carve out your place as a lone wanderer, a rising merchant, a sword for hire, or something in between.
+          Seasons shift the land. Markets move. Alliances form and break. Renown is earned, not given.
         </p>
       </div>
     </section>
 
-    <section class="for-section" id="pillars" aria-labelledby="pillars-title">
+    <section class="for-section for-section--wide" id="pillars" aria-labelledby="pillars-title">
       <div class="for-section__inner">
-        <h2 id="pillars-title">Gameplay pillars</h2>
-        <p class="lead">Systems that shape everyday life in Gwynedd.</p>
-        <ul class="for-pillars">
-          <li>
-            <strong>Fishing</strong>
-            <span>Welsh rivers and lakes — food, trade, and quiet hours between storms.</span>
+        <p class="for-eyebrow">Gameplay</p>
+        <h2 id="pillars-title">What you'll do</h2>
+        <p class="lead">Systems you meet on the island and carry into Gwynedd.</p>
+
+        <ul class="for-features">
+          <li class="for-feature">
+            <h3>Directional combat</h3>
+            <p>Flick the mouse to choose your swing, block to match theirs. Every swing costs stamina, so timing beats spamming.</p>
           </li>
-          <li>
-            <strong>Economy</strong>
-            <span>Dynamic trading and markets that reward attention and risk.</span>
+          <li class="for-feature">
+            <h3>Archery</h3>
+            <p>Draw, hold, and loose. A bow for hunting and for thinning out a fight before it reaches you.</p>
           </li>
-          <li>
-            <strong>Combat</strong>
-            <span>Medieval conflict that asks for timing, judgment, and steel.</span>
+          <li class="for-feature">
+            <h3>Survival</h3>
+            <p>Health, stamina, and the buffs that keep them up: Warm by a campfire, Well Rested after sleep, Blessed after prayer.</p>
           </li>
-          <li>
-            <strong>Farming</strong>
-            <span>Cultivate holdings, harvest through the year, and feed what you build.</span>
+          <li class="for-feature">
+            <h3>Weather &amp; storms</h3>
+            <p>Clear skies turn to rain and full storms, with lightning and rolling thunder. The sea gets rougher the further out you go.</p>
           </li>
-          <li>
-            <strong>Seasons</strong>
-            <span>Weather and seasons that change travel, work, and survival.</span>
+          <li class="for-feature">
+            <h3>Boats &amp; the sea</h3>
+            <p>Board, row, and steer longboats that ride the swell and run aground if you push them into the shallows.</p>
           </li>
-          <li>
-            <strong>Skills</strong>
-            <span>Level crafts and abilities as your legend takes shape.</span>
+          <li class="for-feature">
+            <h3>Fishing</h3>
+            <p>Welsh waters for food and coin, and the quiet hours between storms.</p>
+          </li>
+          <li class="for-feature">
+            <h3>Day &amp; night</h3>
+            <p>A living clock. Nights are dark, so plant torches anywhere to push it back, and pick them up when you move on.</p>
+          </li>
+          <li class="for-feature">
+            <h3>Skills</h3>
+            <p>A leather-bound skills book tracks what you've trained, what each skill does, and how far to the next level.</p>
+          </li>
+          <li class="for-feature">
+            <h3>Trade &amp; coin</h3>
+            <p>Earn it, spend it, save it. Coin buys the tools of survival now and the markets of Gwynedd later.</p>
           </li>
         </ul>
       </div>
@@ -146,30 +185,32 @@
 
     <section class="for-section for-section--dev" id="roadmap" aria-labelledby="roadmap-title">
       <div class="for-section__inner">
-        <h2 id="roadmap-title">Development</h2>
-        <p class="lead">Built in public — one prototype system at a time.</p>
+        <p class="for-eyebrow">Development</p>
+        <h2 id="roadmap-title">Where it's at</h2>
+        <p class="lead">Built in public, one system at a time.</p>
 
         <aside class="for-status" aria-labelledby="dev-status-title">
           <strong id="dev-status-title">Now</strong>
           <p>
-            One early alpha playtest completed — moving into more testing and improvement while clarifying the direction of the game.
+            The island opening is coming together end to end: the storm intro, survival days, directional combat
+            and archery, and the escape. We're polishing combat feel and weather before the next round of playtests.
           </p>
         </aside>
 
         <ol class="for-roadmap">
-          <li>
+          <li class="done">
             <h3>Foundation</h3>
-            <p>Engine setup, core design, and community building.</p>
+            <p>Engine choice, core design, first alpha playtest, and building the community.</p>
             <time datetime="2025">2025 – mid 2026</time>
           </li>
           <li class="current">
-            <h3>Prototype</h3>
-            <p>Movement, fishing, and early environment systems.</p>
+            <h3>The island</h3>
+            <p>The playable opening and tutorial: survival, combat, weather, boats, and the escape.</p>
             <time datetime="2026">Late 2026</time>
           </li>
           <li>
-            <h3>Alpha</h3>
-            <p>Combat, economy, and closed community testing.</p>
+            <h3>Gwynedd</h3>
+            <p>The mainland: settlements, markets, farming, and closed community testing.</p>
             <time datetime="2027">2027</time>
           </li>
           <li>
@@ -183,96 +224,71 @@
 
     <section class="for-section for-section--wide" id="latest-news" aria-labelledby="news-title">
       <div class="for-section__inner">
-        <h2 id="news-title">Watch</h2>
-        <p class="lead">Latest development video from the studio channel.</p>
+        <p class="for-eyebrow">Watch</p>
+        <h2 id="news-title">From the channel</h2>
+        <p class="lead">The latest development video.</p>
         <div class="for-video" id="latest-video" role="region" aria-label="YouTube video content">
           Loading video…
         </div>
       </div>
     </section>
 
-    <section class="for-section" id="blog-preview" aria-labelledby="blog-preview-title">
+    <section class="for-section for-section--wide" id="blog-preview" aria-labelledby="blog-preview-title">
       <div class="for-section__inner">
-        <h2 id="blog-preview-title">Dev log</h2>
-        <p class="lead">Notes from the build.</p>
-        <ul class="for-logs">
-          <li>
-            <a class="for-log" href="../blog-post-engine-selection/">
-              <div class="for-log__date">25 August 2025</div>
-              <div class="for-log__title">Engine selection: Godot vs Unreal</div>
-              <p class="for-log__excerpt">
-                How we weighed Godot and Unreal for Fields of Renown — and why the foundation matters.
-              </p>
-            </a>
-          </li>
-          <li>
-            <a class="for-log" href="../coming-soon/">
-              <div class="for-log__date">Coming soon</div>
-              <div class="for-log__title">Fishing system</div>
-              <p class="for-log__excerpt">
-                A brief outlook on fishing and what it means for Bodkin Interactive.
-              </p>
-            </a>
-          </li>
+        <p class="for-eyebrow">Dev log</p>
+        <h2 id="blog-preview-title">Notes from the build</h2>
+        <p class="lead">Systems, decisions, and what's next, straight from the studio.</p>
+
+        {%- if site.posts.size > 0 %}
+        <ul class="for-log-grid">
+          {%- for p in site.posts limit: 3 %}
+          {% include post-card.html post=p %}
+          {%- endfor %}
         </ul>
+        {%- else %}
+        <p class="for-empty">The first post is on its way.</p>
+        {%- endif %}
+
+        <div class="for-section__more">
+          <a href="/devlog/" class="for-cta for-cta--ghost">All dev log posts</a>
+          <a href="/devlog/feed.xml" class="for-cta for-cta--ghost">RSS</a>
+        </div>
       </div>
     </section>
 
     <section class="for-section for-section--wide" id="supporters" aria-labelledby="supporters-title">
       <div class="for-section__inner">
-        <h2 id="supporters-title">Community</h2>
+        <p class="for-eyebrow">Community</p>
+        <h2 id="supporters-title">On the road with us</h2>
         <p class="lead">Friends and crews walking the road with us.</p>
 
         <ul class="for-supporters">
           <li class="for-supporter">
-            <img src="../Assets/img/Uld_Logo_minified.png" alt="ULD — United Lads Division" width="88" height="88" loading="lazy" />
+            <img src="/Assets/img/Uld_Logo_minified.png" alt="ULD, United Lads Division" width="88" height="88" loading="lazy" />
             <h3>ULD</h3>
             <p>
-              United Lads Division — long-running competitive squad bridging Oceanic and South East Asian players.
+              United Lads Division: a long-running competitive squad bridging Oceanic and South East Asian players.
             </p>
             <a href="https://discord.gg/ULD" target="_blank" rel="noopener">Join ULD Discord</a>
           </li>
           <li class="for-supporter">
-            <img src="../Assets/img/clifford.png" alt="Clifford" width="88" height="88" loading="lazy" />
+            <img src="/Assets/img/clifford.png" alt="Clifford" width="88" height="88" loading="lazy" />
             <h3>Clifford</h3>
             <p>
-              Longtime supporter of our game development — and a good friend of the studio.
+              Longtime supporter of our game development and a good friend of the studio.
             </p>
             <a href="https://discord.gg/bigredrs2" target="_blank" rel="noopener">Join Clifford’s Discord</a>
           </li>
         </ul>
 
         <div class="for-community-cta">
-          <a
-            href="https://discord.gg/sqXW4r2nw9"
-            class="for-cta for-cta--discord"
-            target="_blank"
-            rel="noopener"
-          >Join the Fields of Renown Discord</a>
+          <p>Playtest calls, clips, and dev chat happen in the Discord first.</p>
+          <a href="https://discord.gg/sqXW4r2nw9" class="for-cta for-cta--discord" target="_blank" rel="noopener">Join the Fields of Renown Discord</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="for-footer" role="contentinfo">
-    <div class="for-footer__links">
-      <a href="../">Studio</a>
-      <a href="../boddyfit/">BoddyFit</a>
-      <a href="../contact/">Contact</a>
-      <a href="https://discord.gg/sqXW4r2nw9" target="_blank" rel="noopener">Discord</a>
-      <a href="https://www.youtube.com/@KillerAuzzie" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://twitch.tv/killerauzziee" target="_blank" rel="noopener">Twitch</a>
-      <a href="https://killerauzzie.itch.io" target="_blank" rel="noopener">itch.io</a>
-    </div>
-    <p>&copy; 2026 Bodkin Interactive. All rights reserved.</p>
-  </footer>
-
-  <button id="back-to-top" class="for-top" type="button" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-
-  <script src="../script.js"></script>
+  {% include for-footer.html %}
 </body>
 </html>

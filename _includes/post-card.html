@@ -1,0 +1,25 @@
+{%- comment -%} One dev log entry in a list. Pass post=the post. {%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign p_words = p.content | strip_html | number_of_words -%}
+{%- assign p_minutes = p_words | divided_by: 200 | plus: 1 -%}
+<li class="for-log-card"{% if p.tags.size > 0 %} data-tags="{{ p.tags | join: ',' | downcase | escape }}"{% endif %}>
+  <a class="for-log-card__link" href="{{ p.url }}">
+    {%- if p.cover %}
+    <img class="for-log-card__cover" src="{{ p.cover }}" alt="" loading="lazy" />
+    {%- endif %}
+    <div class="for-log-card__body">
+      <div class="for-log-card__meta">
+        <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%-d %B %Y" }}</time>
+        <span aria-hidden="true">·</span>
+        <span>{{ p_minutes }} min read</span>
+      </div>
+      <h3 class="for-log-card__title">{{ p.title }}</h3>
+      <p class="for-log-card__excerpt">{{ p.description | default: p.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>
+      {%- if p.tags.size > 0 %}
+      <ul class="for-tags" aria-label="Tags">
+        {%- for t in p.tags %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </a>
+</li>
